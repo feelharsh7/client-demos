@@ -1,0 +1,6 @@
+# Ignore private lead prospect data
+leads/
+
+# But track builds directory
+!builds/
+!builds/**
