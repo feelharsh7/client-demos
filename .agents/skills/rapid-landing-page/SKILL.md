@@ -1,60 +1,107 @@
 ---
 name: rapid-landing-page
-description: Builds a live single-file HTML/Tailwind conversion redesign in builds/ for recording a 60-second Loom audit, automatically commits and pushes to GitHub, and returns the live preview URL
+description: Builds bespoke, editorial-grade live single-file HTML/Tailwind conversion redesigns in builds/<brand>/ enforcing taste extraction, strict anti-AI guardrails, and tactile craft, then commits and pushes to GitHub Pages.
 ---
 
-# Rapid Landing Page Skill
+# Rapid Landing Page Skill — High-Craft Editorial & CRO Engine
 
-Inspect a target prospect's current landing page or Shopify storefront, architect a high-converting responsive redesign, build a single-file `builds/<brand>/index.html` using Tailwind CSS, automatically commit and push to GitHub, and deliver the live hosted preview URL along with local preview options for recording a 60-second Loom audit video.
+Build bespoke, high-converting single-file HTML/Tailwind landing page redesigns in `builds/<brand>/index.html` that look and feel like world-class design studios (e.g., Collins, Instrument, Metalab) built them. **NEVER produce generic, cookie-cutter "AI-made" layouts.** 
 
-## Objective
-Provide unmistakable upfront proof-of-work that cuts through cold outreach noise by delivering a clickable, live preview showing the prospect what their store or landing page looks like after a 72-hour conversion overhaul.
+Every build must strictly follow this 3-phase workflow before deployment.
 
 ---
 
-## Workflow Instructions
+## CORE PHILOSOPHY: ZERO AI-SLOP
+The modern web is drowning in recognizable AI templates: generic purple/blue gradients, glowing background blurs, emoji bullet points, centered 3-card icon grids, and fake press logos. 
 
-### Step 1: Target Inspection
-- Review the prospect's live website URL.
-- Extract brand identity markers:
-  - Primary, secondary, and accent colors
-  - Typography style (sans-serif, modern serif, display fonts)
-  - Core value proposition and headline messaging
-  - Hero imagery / product media links
-  - Current conversion blockers (buried call-to-action, lack of social proof, cluttered navigation, weak benefit hierarchy)
+Our client demos cut through the noise because they feel human, curated, tactile, and uncompromisingly premium.
 
-### Step 2: Build `builds/<brand>/index.html`
-- Create a dedicated folder `builds/<brand>/`.
-- Author a modern, fully responsive, standalone `index.html` featuring:
-  - **Tailwind CSS CDN**: `<script src="https://cdn.tailwindcss.com"></script>` with tailored config for brand colors and fonts.
-  - **Optimized Hero Section**: Clear H1 benefit-driven headline, sub-headline answering "why now", star ratings/press badge proof, high-contrast primary CTA button ("Get Started" / "Shop Now"), and mobile-first layout.
-  - **Social Proof / Trust Badges**: Clean customer logos, testimonial quotes, or rating summaries placed above the fold or immediately below the hero.
-  - **Feature / Benefit Grid**: 3 concise benefit blocks with crisp icons and clear problem-solution messaging.
-  - **Comparison Section (Before vs. After)**: Highlighting the upgrade from legacy friction to the new streamlined experience.
-  - **Sticky Mobile CTA Bar**: Fixed bottom bar on mobile screens for friction-free conversion.
+---
 
-### Step 3: Git Commit, Push & Live Preview URL Generation
-Whenever a demo is built in `builds/<brand>/index.html`:
-1. Stage and commit the build files:
+## PHASE 1: LIVE BENCHMARK & TASTE EXTRACTION (MANDATORY BEFORE CODING)
+
+Before writing any HTML/CSS, research 2–3 best-in-class live websites in the prospect's vertical using web search or browser inspection. Reference industry benchmarks for taste:
+- **D2C Skincare & Wellness**: `aesop.com`, `glossier.com`, `olipop.com`, `graza.co`, `seed.com`
+- **Luxury & Editorial Fashion**: `ssense.com`, `toteme.com`, `bottegaveneta.com`, `kith.com`, `rowingblazers.com`
+- **Hardware & Industrial Tech D2C**: `teenage.engineering`, `ridge.com`, `nothing.tech`, `analogue.co`
+- **Premium B2B / SaaS**: `linear.app`, `raycast.com`, `stripe.com`, `vercel.com`
+
+### Required Output: `builds/<brand>/DESIGN_TOKENS.md`
+Extract and document the design tokens into `builds/<brand>/DESIGN_TOKENS.md` containing:
+1. **Typography Scale & Contrast**:
+   - Primary pairing: Editorial serif (e.g., Cormorant Garamond, Instrument Serif, Newsreader) + grotesque sans (e.g., Inter, Space Grotesk, Plus Jakarta Sans), OR technical industrial monospace (e.g., JetBrains Mono, Space Mono).
+   - Display headlines: Tight letter tracking (`tracking-[-0.03em]` or `-0.04em`), intentional line heights (`leading-[1.05]`).
+   - Micro-labels: Uppercase metadata chips (`10px`–`11px`, wide tracking `0.12em`–`0.2em`, font-mono or font-sans medium).
+2. **Color & Surface Restraint**:
+   - **90% Dominant Canvas**: Warm neutral / textured alabaster (`#faf8f5`, `#f5f4f0`), raw linen, or deep obsidian (`#0a0b0d`, `#111215`).
+   - **8% Typography & Architecture**: Deep ink, dark charcoal (`#1a1a1a`), or off-white (`#eae8e4`).
+   - **2% Intentional Accent**: Exactly ONE deliberate accent color drawn from the product itself (e.g., vermilion, olive drab, safety orange, champagne gold). No rainbows.
+3. **Grid & Structural Rhythm**:
+   - Asymmetric 12-column editorial grids.
+   - `1px` structural hairline borders (`border-collapse` architectural look with borders like `#e5e2dc` or `#222428`).
+   - Generous negative space (`py-20` to `py-32`, `gap-8` to `gap-16`).
+   - Sticky split-screen product storytelling (media locked while story scrolls, or horizontal filmstrip inspection)—never repetitive 3-column centered card grids.
+
+---
+
+## PHASE 2: STRICT ANTI-AI-SLOP GUARDRAILS
+
+Every build is audited against these strict prohibitions:
+
+### Explicitly Banned Tropes:
+1. ❌ **NO Default AI Gradients**: Never use default Tailwind `from-blue-600 via-indigo-600 to-purple-600`, or purple/pink neon glowing background blur orbs (`blur-3xl rounded-full`).
+2. ❌ **NO Emoji Icons**: Never use emojis (⚡, 🚀, 🔥, 💡, 💎, ✨) inside feature lists, bullet points, headlines, or CTAs.
+3. ❌ **NO Fake Press Logo Bars**: Never insert generic text strings like "VOGUE · GQ · FORBES · ELLE" unless citing real, verifiable press links.
+4. ❌ **NO Repetitive 3-Card Drop Shadow Grids**: Ban `grid-cols-3` containing identical centered rounded boxes with `shadow-lg rounded-xl` and circular icon backgrounds.
+5. ❌ **NO Generic Stock Stock Images**: Never use low-resolution or generic business handshake / smiling stock models.
+
+### Mandatory High-Craft Alternatives:
+- **Curated Editorial Photography**: Use real, high-resolution lifestyle/editorial photography via Unsplash/Pexels with specific mood parameters (warm daylight, directional editorial shadow, natural 35mm film grain, or clean industrial studio lighting).
+- **Geometric SVG Marks**: Inline vector icons crafted with uniform `1.25px` or `1.5px` stroke width, `stroke-linecap="round"`, and crisp geometric lines.
+- **Architectural Table / Hairline Layouts**: Use structural divider lines (`divide-y`, `divide-slate-200` or `divide-[#222]`) and editorial column offsets.
+
+---
+
+## PHASE 3: INTERACTIVE CRAFT & DEPLOYMENT
+
+### Tactile Interactions & Motion
+Build `builds/<brand>/index.html` with tactile, responsive interactions:
+1. **Interactive Variant / Bundle Drawer or Selector**:
+   - Custom-styled radio chips or toggle matrix with instant price, discount calculation, and active state animation.
+   - Real-time stock status counter or batch allocation tag.
+2. **Subtle Custom CSS Easing**:
+   - Use custom cubic-bezier curves for fluid micro-interactions:
+     ```css
+     transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+     ```
+3. **Sticky Mobile Ergonomics**:
+   - Fixed thumb-zone bottom bar with crisp typography, selected tier indicator, and zero layout shift.
+4. **Editorial Lookbook / Carousel / Tab Switcher**:
+   - Lightweight zero-dependency JS tab switcher or thumbnail sync that feels native and responsive.
+
+### Git Automation & Deployment Workflow
+Whenever a brand demo is authored in `builds/<brand>/index.html`:
+1. Stage and commit both the design token spec and the build:
    ```bash
-   git add builds/<brand>/index.html
-   git commit -m "feat(builds): add conversion redesign demo for <brand>"
+   git add builds/<brand>/
+   git commit -m "feat(builds): craft bespoke editorial demo for <brand>"
    ```
-2. Push changes to GitHub:
+2. Push to GitHub:
    ```bash
    git push origin main
    ```
-3. Return and display the live GitHub Pages preview URL to the user:
+3. Return the verified live GitHub Pages preview URL:
    `https://Feelharsh7.github.io/client-demos/builds/<brand>/`
-   *(Also remind the user that GitHub Pages must be configured in repository settings under Pages > Source: Deploy from branch `main` / root)*.
+4. Update the root `index.html` showcase directory with the new demo card.
 
-### Step 4: Local Preview Server
-- Launch a local preview server from the workspace root or the brand directory:
-  - e.g., `python -m http.server 8080 --directory builds/<brand>` or PowerShell web server.
-- Verify that the page loads properly at `http://localhost:8080`.
+---
 
-### Step 5: 60-Second Loom Audit Script Preparation
-Provide a short 60-second Loom recording structure leveraging the live demo link:
-1. **0:00 - 0:15 (The Hook)**: "Hey [Name], love what you're doing with [Brand]. I was checking out your mobile store and noticed [Specific UX friction] was likely costing you conversions."
-2. **0:15 - 0:45 (The Teardown & Live Rebuild)**: "Instead of just pointing it out, I went ahead and rebuilt your hero section and mobile checkout flow here live [Show live preview at https://Feelharsh7.github.io/client-demos/builds/<brand>/]. Notice how the clear CTA and trust hierarchy removes buyer friction."
-3. **0:45 - 1:00 (Zero-Friction CTA)**: "If you'd like the code or want us to implement this in 72 hours, let me know. Either way, hope this gives you an easy CRO win!"
+## PHASE 4: 60-SECOND LOOM OUTREACH SCRIPT
+
+Provide a high-impact 60-second video walkthrough script customized to the prospect's brand:
+1. **0:00 - 0:15 (The Hook & Respect)**:  
+   *"Hey [Name], love the aesthetic you've curated at [Brand]. I was studying your mobile customer journey and noticed a couple of friction points in the checkout transition that are likely suppressing your conversion rate."*
+2. **0:15 - 0:45 (The Proof-of-Work & Rebuild)**:  
+   *"Rather than sending an unsolicited critique, I took your product and rebuilt your hero and mobile purchase experience live here [Open https://Feelharsh7.github.io/client-demos/builds/<brand>/]. Notice how the tactile bundle selector, editorial typography hierarchy, and sticky 1-click flow eliminate hesitation without cheapening the brand."*
+3. **0:45 - 1:00 (Zero-Friction Next Step)**:  
+   *"If your team wants the code or wants us to run a 72-hour conversion sprint on another flagship page, let me know. Either way, hope the live preview sparks some immediate CRO wins for your next drop!"*
