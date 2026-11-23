@@ -3,291 +3,434 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURA Pro Sculpt — Electric Eye CRO Showcase</title>
+  <title>PICUAL & CO. — Single-Estate Early Harvest Squeeze EVOO · Electric Eye Showcase</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; }
-    h1, h2, h3, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+    :root {
+      --canvas: #F6E6D9;
+      --canvas-light: #FBF8F2;
+      --olive: #3C422E;
+      --chartreuse: #D1E030;
+      --lime: #A7E852;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--canvas);
+      color: var(--olive);
+    }
+    .font-serif-vintage {
+      font-family: 'DM Serif Display', Georgia, serif;
+    }
+    .font-mono-tag {
+      font-family: 'Space Mono', monospace;
+    }
+    /* Hard offset retro drop shadow tactile styling */
+    .retro-shadow-sm {
+      box-shadow: 2px 2px 0px #3C422E;
+    }
+    .retro-shadow {
+      box-shadow: 3px 3px 0px #3C422E;
+    }
+    .retro-shadow-lg {
+      box-shadow: 5px 5px 0px #3C422E;
+    }
+    .retro-btn {
+      transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 120ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .retro-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #3C422E;
+    }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 pb-24 md:pb-12 antialiased selection:bg-indigo-600 selection:text-white">
+<body class="selection:bg-[#D1E030] selection:text-[#3C422E] pb-24 md:pb-16 antialiased">
 
-  <!-- Top Urgency Banner -->
-  <div class="bg-indigo-900 text-indigo-100 px-4 py-2 text-center text-xs sm:text-sm font-semibold tracking-wide flex items-center justify-center gap-2">
-    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-    <span>FLASH SALE: Extra 20% OFF Bundles + Free 48-Hour Priority Shipping</span>
-    <span class="hidden sm:inline bg-indigo-800 px-2 py-0.5 rounded text-[11px] font-mono tracking-wider">CODE: GLOW20</span>
-  </div>
+  <!-- Top Olive Grove Banner -->
+  <aside class="bg-[#3C422E] text-[#F6E6D9] py-2 px-4 text-center text-xs font-mono-tag tracking-wider flex items-center justify-center gap-3 border-b-2 border-[#3C422E]">
+    <span class="inline-block w-2 h-2 rounded-full bg-[#D1E030]"></span>
+    <span>FRESH HARVEST BATCH N° 08 · SINGLE ESTATE JAÉN, SPAIN · SHIPS IN 24H</span>
+    <span class="hidden md:inline bg-[#4b523a] text-[#D1E030] px-2 py-0.5 rounded-full text-[10px] font-bold">ZERO SNOBBERY</span>
+  </aside>
 
-  <!-- Header -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+  <!-- Navigation -->
+  <header class="bg-[#FBF8F2] border-b-2 border-[#3C422E] sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-extrabold text-lg shadow-md shadow-indigo-200">A</div>
-        <div>
-          <span class="font-extrabold text-xl tracking-tight text-slate-900">AURA<span class="text-indigo-600 font-black">PRO</span></span>
-          <span class="hidden md:inline-block ml-3 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200">Electric Eye CRO Architecture</span>
-        </div>
+        <a href="#" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 rounded-full bg-[#D1E030] border-2 border-[#3C422E] flex items-center justify-center retro-shadow-sm group-hover:rotate-6 transition">
+            <svg class="w-5 h-5 text-[#3C422E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v8"></path>
+              <path d="M8 10c0 4.418 3.582 8 8 8a8 8 0 0 0 0-16c-1.5 0-3 .5-4.5 1.5"></path>
+            </svg>
+          </div>
+          <span class="font-serif-vintage text-2xl font-bold tracking-tight text-[#3C422E]">
+            PICUAL <span class="italic font-normal">&amp;</span> CO.
+          </span>
+        </a>
+        <span class="hidden lg:inline-block ml-4 px-3 py-1 rounded-full text-[10px] font-mono-tag font-bold uppercase tracking-wider bg-[#F6E6D9] text-[#3C422E] border border-[#3C422E]">
+          Electric Eye Taste Architecture
+        </span>
       </div>
+
       <div class="flex items-center gap-4">
-        <div class="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-emerald-50 text-emerald-800 px-3 py-1.5 rounded-full border border-emerald-200">
-          <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-          <span>4.9 / 5.0 (12,840+ Verified Reviews)</span>
-        </div>
-        <button onclick="scrollToCheckout()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow-sm">
-          Shop Offers
+        <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono-tag text-[#3C422E] bg-[#E8DCB8] px-3 py-1.5 rounded-full border border-[#3C422E]">
+          Acidity &lt; 0.18% · Polyphenols 620mg/kg
+        </span>
+        <button onclick="scrollToSelector()" class="retro-btn bg-[#D1E030] text-[#3C422E] text-xs font-extrabold uppercase tracking-wider px-5 py-2.5 rounded-full border-2 border-[#3C422E] retro-shadow-sm">
+          Get Squeezing
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Main Hero / PDP Section -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-10">
-    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+  <!-- Hero & Conversion Sandbox -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 pt-8 sm:pt-14">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
       
-      <!-- Left Column: Visual Showcase -->
-      <div class="lg:col-span-7 space-y-4">
-        <!-- Main Product Card -->
-        <div class="relative bg-gradient-to-br from-indigo-50/60 via-white to-purple-50/50 rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm overflow-hidden text-center">
-          <span class="absolute top-4 left-4 bg-indigo-600 text-white text-[11px] font-bold uppercase px-3 py-1 rounded-full shadow-sm">
-            Best Seller · 2026 Edition
-          </span>
-          <span class="absolute top-4 right-4 bg-emerald-100 text-emerald-800 border border-emerald-200 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> In Stock & Ready to Ship
-          </span>
-
-          <!-- Product Graphic -->
-          <div class="py-12 flex justify-center items-center">
-            <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-purple-600 shadow-2xl shadow-indigo-300 flex flex-col items-center justify-center p-8 text-white transform hover:scale-105 transition duration-300">
-              <div class="w-20 h-20 rounded-full border-4 border-white/30 flex items-center justify-center mb-3">
-                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              </div>
-              <p class="font-extrabold text-2xl tracking-tight">AURA PRO</p>
-              <p class="text-xs text-indigo-100 font-medium">Microcurrent Sonic Sculptor</p>
-              <div class="mt-4 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-[11px] font-bold">Clinical Grade 8500 RPM</div>
-            </div>
-          </div>
-
-          <!-- Feature Chips -->
-          <div class="grid grid-cols-3 gap-3 pt-4 border-t border-slate-200/60 text-xs">
-            <div class="p-2.5 rounded-xl bg-white border border-slate-200/80">
-              <p class="font-bold text-slate-900">3-Min Daily</p>
-              <p class="text-slate-500 text-[11px]">Instant Facelift Effect</p>
-            </div>
-            <div class="p-2.5 rounded-xl bg-white border border-slate-200/80">
-              <p class="font-bold text-slate-900">Red Light 660nm</p>
-              <p class="text-slate-500 text-[11px]">Collagen Boosting</p>
-            </div>
-            <div class="p-2.5 rounded-xl bg-white border border-slate-200/80">
-              <p class="font-bold text-slate-900">90-Day Battery</p>
-              <p class="text-slate-500 text-[11px]">USB-C Fast Recharge</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social Proof Badges Strip -->
-        <div class="bg-white rounded-2xl p-4 border border-slate-200 flex flex-wrap items-center justify-around gap-4 text-slate-400 font-bold text-sm tracking-wider uppercase">
-          <span class="hover:text-slate-600 transition">VOGUE</span>
-          <span class="hover:text-slate-600 transition">ELLE</span>
-          <span class="hover:text-slate-600 transition">GQ</span>
-          <span class="hover:text-slate-600 transition">BYRDIE</span>
-          <span class="hover:text-slate-600 transition">FORBES</span>
-        </div>
-      </div>
-
-      <!-- Right Column: Conversion Engine (CRO Core) -->
-      <div id="checkout-box" class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-xl shadow-slate-200/50 space-y-6">
+      <!-- Left Column: Asymmetric Tactile Showcase -->
+      <div class="lg:col-span-7 space-y-6">
         
-        <!-- Title & Ratings -->
-        <div>
-          <div class="flex items-center gap-2 text-amber-500 text-sm mb-1">
-            <span>★★★★★</span>
-            <span class="text-slate-700 font-bold text-xs">4.92 / 5.0</span>
-            <span class="text-slate-400 text-xs font-normal">(3,481 reviews)</span>
+        <!-- Main Product Card with Squeeze Bottle Visual -->
+        <div class="relative bg-[#FBF8F2] rounded-3xl border-2 border-[#3C422E] retro-shadow p-6 sm:p-10 overflow-hidden">
+          
+          <!-- Tilted Stamp Badges -->
+          <div class="flex items-start justify-between relative z-10 mb-4">
+            <div class="inline-block bg-[#D1E030] text-[#3C422E] text-[11px] font-mono-tag font-bold uppercase px-3 py-1 rounded-full border-2 border-[#3C422E] -rotate-2 retro-shadow-sm">
+              Squeeze, Drizzle, Repeat
+            </div>
+            <div class="inline-block bg-[#3C422E] text-[#D1E030] text-[10px] font-mono-tag font-bold uppercase px-3 py-1 rounded-full border-2 border-[#3C422E] rotate-2">
+              Never in a heavy glass jug
+            </div>
           </div>
-          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            AURA Pro™ Restorative Microcurrent Sculptor
-          </h1>
-          <p class="text-slate-600 text-sm mt-2 leading-relaxed">
-            Clinically proven to lift cheekbones, smooth fine lines, and drain puffiness in 3 minutes a day. Zero needles, zero downtime.
+
+          <!-- Product Hero Presentation -->
+          <div class="relative my-8 py-6 flex flex-col sm:flex-row items-center justify-center gap-8">
+            
+            <!-- Finishing Squeeze Bottle (Lime green cap) -->
+            <div class="w-44 bg-[#3C422E] rounded-3xl p-5 border-2 border-[#3C422E] text-[#FBF8F2] flex flex-col items-center justify-between text-center min-h-[310px] retro-shadow transform -rotate-2 hover:rotate-0 transition duration-200">
+              <div class="w-8 h-8 rounded-full bg-[#D1E030] border-2 border-[#3C422E] flex items-center justify-center text-[#3C422E] font-bold text-xs -mt-8">
+                ▼
+              </div>
+              <div>
+                <span class="text-[9px] font-mono-tag uppercase tracking-widest text-[#D1E030]">Raw Finishing</span>
+                <p class="font-serif-vintage text-2xl mt-1 leading-none">DRIZZLE</p>
+                <p class="text-[10px] opacity-80 mt-1">October Early Harvest</p>
+              </div>
+              <div class="my-4 border-y border-[#555d41] py-2 w-full text-[10px] font-mono-tag space-y-0.5">
+                <p class="text-[#D1E030] font-bold">Single Estate Picual</p>
+                <p class="opacity-70">500 mL Squeeze</p>
+              </div>
+              <div class="text-[10px] uppercase font-bold tracking-wider bg-[#4b523a] text-[#D1E030] px-2.5 py-1 rounded-full w-full">
+                For Salads, Crudo &amp; Ice Cream
+              </div>
+            </div>
+
+            <!-- Cooking Squeeze Bottle (Orange cap) -->
+            <div class="w-44 bg-[#E7D6C4] rounded-3xl p-5 border-2 border-[#3C422E] text-[#3C422E] flex flex-col items-center justify-between text-center min-h-[310px] retro-shadow transform rotate-3 hover:rotate-0 transition duration-200">
+              <div class="w-8 h-8 rounded-full bg-[#F38B21] border-2 border-[#3C422E] flex items-center justify-center text-white font-bold text-xs -mt-8">
+                ▼
+              </div>
+              <div>
+                <span class="text-[9px] font-mono-tag uppercase tracking-widest text-[#8a571f]">Everyday High Smoke</span>
+                <p class="font-serif-vintage text-2xl mt-1 leading-none">SIZZLE</p>
+                <p class="text-[10px] opacity-80 mt-1">November Peak Harvest</p>
+              </div>
+              <div class="my-4 border-y border-[#3C422E]/20 py-2 w-full text-[10px] font-mono-tag space-y-0.5">
+                <p class="font-bold text-[#3C422E]">Smoke Point: 410°F</p>
+                <p class="opacity-70">750 mL Squeeze</p>
+              </div>
+              <div class="text-[10px] uppercase font-bold tracking-wider bg-[#3C422E] text-[#FBF8F2] px-2.5 py-1 rounded-full w-full">
+                For Roasting, Searing &amp; Eggs
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Proof Metrics Bar -->
+          <div class="grid grid-cols-3 gap-3 pt-6 border-t-2 border-[#3C422E]/15 text-xs text-center font-mono-tag">
+            <div class="p-2.5 bg-[#F6E6D9] rounded-2xl border border-[#3C422E]">
+              <p class="font-bold text-base text-[#3C422E]">100%</p>
+              <p class="text-[10px] text-[#555d41]">Jaén Picual Olives</p>
+            </div>
+            <div class="p-2.5 bg-[#F6E6D9] rounded-2xl border border-[#3C422E]">
+              <p class="font-bold text-base text-[#3C422E]">&lt; 22°C</p>
+              <p class="text-[10px] text-[#555d41]">Cold Extraction</p>
+            </div>
+            <div class="p-2.5 bg-[#F6E6D9] rounded-2xl border border-[#3C422E]">
+              <p class="font-bold text-base text-[#3C422E]">620 mg</p>
+              <p class="text-[10px] text-[#555d41]">Active Polyphenols</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial Taste Quote -->
+        <div class="bg-[#3C422E] text-[#FBF8F2] p-6 rounded-3xl border-2 border-[#3C422E] retro-shadow-sm flex items-center gap-4">
+          <div class="text-3xl text-[#D1E030] font-serif-vintage">“</div>
+          <p class="text-sm font-medium leading-relaxed">
+            Glass bottles get oily, slip out of your hands, and pour too fast. We put Spain's most awarded early-harvest olive oil into easy-squeeze chef bottles so you actually use the good stuff every single day.
           </p>
         </div>
 
-        <!-- Live Scarcity Counter -->
-        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 flex items-center justify-between text-xs text-amber-900 font-semibold">
-          <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
-            <span>High Demand: Only <strong class="text-amber-950 font-bold">14 units</strong> left in batch #6</span>
+      </div>
+
+      <!-- Right Column: Tactile High-Conversion Bundle Engine -->
+      <div id="bundle-selector" class="lg:col-span-5 bg-[#FBF8F2] rounded-3xl border-2 border-[#3C422E] retro-shadow-lg p-6 sm:p-8 space-y-6">
+        
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono-tag font-bold text-[#3C422E] bg-[#D1E030] px-3 py-1 rounded-full border border-[#3C422E] mb-2.5">
+            ★ 4.96/5 from 8,420+ Verified Home Cooks
           </div>
-          <span class="text-amber-700 font-mono text-[11px]">Restocks in 4 wks</span>
+          <h1 class="text-3xl sm:text-4xl font-serif-vintage font-bold text-[#3C422E] tracking-tight leading-none">
+            The Fresh Squeeze Set
+          </h1>
+          <p class="text-xs sm:text-sm text-[#555d41] mt-2 leading-relaxed">
+            Real single-varietal extra virgin olive oil from Andalusia. One for raw finishing salads, one for high-heat sizzling.
+          </p>
         </div>
 
-        <!-- Interactive Tier Bundle Selector -->
+        <!-- 3-Tier Bundle Cards (Graza/Olipop Stacked Style) -->
         <div class="space-y-3">
-          <label class="block text-xs font-bold uppercase tracking-wider text-slate-500">Select Your Package:</label>
-          
-          <!-- Tier 1: Single -->
-          <div onclick="selectTier(1, 89, 129)" id="tier-1" class="tier-card cursor-pointer border-2 border-slate-200 hover:border-slate-300 rounded-2xl p-4 transition flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <input type="radio" name="tier" id="radio-1" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
-              <div>
-                <p class="font-bold text-slate-900 text-sm">1x Starter Sculptor</p>
-                <p class="text-xs text-slate-500">Includes Charging Cable + Travel Pouch</p>
+          <label class="block text-xs font-mono-tag font-bold uppercase tracking-wider text-[#3C422E]">1. Choose Your Bundle Size:</label>
+
+          <!-- Tier 1: The Duo (DEFAULT & MOST SQUEEZED) -->
+          <div onclick="selectBundle(1, 36, 42)" id="bundle-1" class="bundle-card cursor-pointer border-2 border-[#3C422E] bg-[#F6E6D9] rounded-2xl p-4 retro-shadow-sm relative transition">
+            <span class="absolute -top-2.5 right-6 bg-[#3C422E] text-[#D1E030] text-[10px] font-mono-tag font-bold uppercase px-3 py-0.5 rounded-full border border-[#3C422E]">
+              ★ Most Squeezed · Save $6
+            </span>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="bundle" id="b-radio-1" checked class="w-4 h-4 text-[#3C422E] accent-[#3C422E]">
+                <div>
+                  <p class="font-extrabold text-[#3C422E] text-sm">The Drizzle &amp; Sizzle Duo</p>
+                  <p class="text-xs text-[#555d41]">1x Drizzle (500ml) + 1x Sizzle (750ml)</p>
+                </div>
               </div>
-            </div>
-            <div class="text-right">
-              <p class="font-extrabold text-slate-900 text-base">$89</p>
-              <p class="text-xs text-slate-400 line-through">$129</p>
+              <div class="text-right">
+                <p class="font-extrabold text-[#3C422E] text-lg font-mono-tag">$36</p>
+                <p class="text-xs text-[#8c9674] line-through font-mono-tag">$42</p>
+              </div>
             </div>
           </div>
 
-          <!-- Tier 2: Double (MOST POPULAR) -->
-          <div onclick="selectTier(2, 139, 258)" id="tier-2" class="tier-card relative cursor-pointer border-2 border-indigo-600 bg-indigo-50/40 rounded-2xl p-4 transition flex items-center justify-between shadow-sm">
-            <span class="absolute -top-2.5 right-6 bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow">
-              Most Popular · Save 46%
-            </span>
-            <div class="flex items-center gap-3">
-              <input type="radio" name="tier" id="radio-2" checked class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
-              <div>
-                <p class="font-bold text-slate-900 text-sm">2x Couple & Travel Glow Pack</p>
-                <p class="text-xs text-indigo-700 font-medium">+ 2x Free Hyaluronic Peptide Serums ($78 value)</p>
+          <!-- Tier 2: The Solo Finishing -->
+          <div onclick="selectBundle(2, 20, 22)" id="bundle-2" class="bundle-card cursor-pointer border-2 border-[#3C422E]/40 hover:border-[#3C422E] bg-white rounded-2xl p-4 transition">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="bundle" id="b-radio-2" class="w-4 h-4 text-[#3C422E] accent-[#3C422E]">
+                <div>
+                  <p class="font-extrabold text-[#3C422E] text-sm">The Solo Drizzle Squeeze</p>
+                  <p class="text-xs text-[#555d41]">1x Early-Harvest Finishing Bottle (500ml)</p>
+                </div>
               </div>
-            </div>
-            <div class="text-right">
-              <p class="font-extrabold text-indigo-900 text-base">$139</p>
-              <p class="text-xs text-slate-400 line-through">$258</p>
+              <div class="text-right">
+                <p class="font-extrabold text-[#3C422E] text-base font-mono-tag">$20</p>
+              </div>
             </div>
           </div>
 
-          <!-- Tier 3: Triple (BEST VALUE) -->
-          <div onclick="selectTier(3, 179, 387)" id="tier-3" class="tier-card relative cursor-pointer border-2 border-slate-200 hover:border-slate-300 rounded-2xl p-4 transition flex items-center justify-between">
-            <span class="absolute -top-2.5 right-6 bg-emerald-600 text-white text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow">
-              Best Value · Save 54%
+          <!-- Tier 3: The Kitchen Refill Vault (BEST VALUE) -->
+          <div onclick="selectBundle(3, 62, 78)" id="bundle-3" class="bundle-card cursor-pointer border-2 border-[#3C422E]/40 hover:border-[#3C422E] bg-white rounded-2xl p-4 relative transition">
+            <span class="absolute -top-2.5 right-6 bg-[#D1E030] text-[#3C422E] text-[10px] font-mono-tag font-bold uppercase px-3 py-0.5 rounded-full border border-[#3C422E]">
+              Best Value · Save $16
             </span>
-            <div class="flex items-center gap-3">
-              <input type="radio" name="tier" id="radio-3" class="w-4 h-4 text-indigo-600 focus:ring-indigo-500">
-              <div>
-                <p class="font-bold text-slate-900 text-sm">3x Complete Family & Gift Set</p>
-                <p class="text-xs text-slate-500">+ Free Serums + Lifetime Warranty</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <input type="radio" name="bundle" id="b-radio-3" class="w-4 h-4 text-[#3C422E] accent-[#3C422E]">
+                <div>
+                  <p class="font-extrabold text-[#3C422E] text-sm">The Squeeze + Refill Vault</p>
+                  <p class="text-xs text-[#555d41]">Duo Squeeze Bottles + 2.5L Fresh Aluminum Can</p>
+                </div>
               </div>
-            </div>
-            <div class="text-right">
-              <p class="font-extrabold text-slate-900 text-base">$179</p>
-              <p class="text-xs text-slate-400 line-through">$387</p>
+              <div class="text-right">
+                <p class="font-extrabold text-[#3C422E] text-base font-mono-tag">$62</p>
+                <p class="text-xs text-[#8c9674] line-through font-mono-tag">$78</p>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Primary CTA Button -->
+        <!-- 2. Purchase Type: Subscribe & Squeeze vs One-Time -->
+        <div class="space-y-3 pt-2 border-t-2 border-[#3C422E]/15">
+          <label class="block text-xs font-mono-tag font-bold uppercase tracking-wider text-[#3C422E]">2. Delivery Option:</label>
+
+          <div class="grid grid-cols-2 gap-3">
+            <button onclick="setPurchaseType('sub')" id="btn-sub" class="purchase-btn p-3 rounded-2xl border-2 border-[#3C422E] bg-[#D1E030] text-left retro-shadow-sm transition">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-extrabold text-[#3C422E]">Subscribe</span>
+                <span class="text-[9px] font-mono-tag font-bold bg-[#3C422E] text-[#D1E030] px-1.5 py-0.5 rounded">Save 15%</span>
+              </div>
+              <p class="text-[11px] text-[#3C422E] font-medium">+ Free Refill Spout</p>
+            </button>
+
+            <button onclick="setPurchaseType('once')" id="btn-once" class="purchase-btn p-3 rounded-2xl border-2 border-[#3C422E]/40 bg-white text-left transition">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-extrabold text-[#3C422E]">One-Time</span>
+                <span class="text-[9px] font-mono-tag text-[#7d8766]">Trial Pack</span>
+              </div>
+              <p class="text-[11px] text-[#555d41]">Standard price</p>
+            </button>
+          </div>
+
+          <!-- Subscription Cadence Selector (Visible when Subscribed) -->
+          <div id="cadence-box" class="bg-[#F6E6D9] p-3 rounded-xl border border-[#3C422E] text-xs flex items-center justify-between">
+            <span class="font-mono-tag font-bold text-[#3C422E]">Deliver every:</span>
+            <div class="flex gap-1.5">
+              <button onclick="setCadence(this, '30 Days')" class="cadence-btn bg-[#3C422E] text-[#D1E030] font-mono-tag px-2.5 py-1 rounded-lg text-xs font-bold">30 Days</button>
+              <button onclick="setCadence(this, '60 Days')" class="cadence-btn bg-white text-[#3C422E] border border-[#3C422E] font-mono-tag px-2.5 py-1 rounded-lg text-xs">60 Days</button>
+              <button onclick="setCadence(this, '90 Days')" class="cadence-btn bg-white text-[#3C422E] border border-[#3C422E] font-mono-tag px-2.5 py-1 rounded-lg text-xs">90 Days</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primary Tactile CTA -->
         <div class="space-y-3 pt-2">
-          <button onclick="handleAddToCart()" class="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white py-4 px-6 rounded-2xl font-black text-base tracking-wide uppercase shadow-lg shadow-indigo-500/30 transform active:scale-[0.98] transition flex items-center justify-center gap-3">
-            <span>Claim Offer & Add To Cart</span>
-            <span id="btn-price" class="bg-indigo-900/60 px-2.5 py-1 rounded-lg text-sm font-mono">$139.00</span>
+          <button onclick="handleAddToCart()" class="retro-btn w-full bg-[#D1E030] hover:bg-[#c3d126] text-[#3C422E] py-4 px-6 rounded-full border-2 border-[#3C422E] retro-shadow font-extrabold text-sm sm:text-base tracking-wider uppercase flex items-center justify-center gap-3">
+            <span>Add To Squeeze Drawer</span>
+            <span id="final-price" class="bg-[#3C422E] text-[#D1E030] px-3 py-1 rounded-full text-xs font-mono-tag font-bold">$30.60</span>
           </button>
 
-          <!-- Guarantee & Reassurance -->
-          <div class="flex items-center justify-center gap-4 text-xs text-slate-500 font-medium">
-            <span class="flex items-center gap-1">
-              <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              60-Day Trial
-            </span>
-            <span>•</span>
-            <span class="flex items-center gap-1">
-              <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-              Free Express Shipping
-            </span>
-            <span>•</span>
-            <span>Encrypted 256-bit Checkout</span>
+          <!-- Reassurance Strip -->
+          <div class="flex items-center justify-center gap-3 text-[11px] font-mono-tag text-[#555d41]">
+            <span>✓ Ships In 24h</span>
+            <span>·</span>
+            <span>✓ Pause or Cancel via SMS</span>
+            <span>·</span>
+            <span>✓ 100% Love-It Guarantee</span>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- Before & After Transformation Section -->
-    <section class="mt-20 py-12 border-t border-slate-200">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Visible Results in 14 Days or Your Money Back</h2>
-        <p class="text-slate-500 text-sm mt-2">Clinical trial results across 420 women aged 28–62 using AURA Pro 3 minutes daily.</p>
+    <!-- Editorial Comparison Section: Grocery Olive Oil vs. Picual & Co -->
+    <section class="mt-20 py-12 border-t-2 border-[#3C422E]/20">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-mono-tag font-bold uppercase tracking-widest text-[#3C422E] bg-[#D1E030] px-3 py-1 rounded-full border border-[#3C422E]">
+          Why Squeeze Bottles Win
+        </span>
+        <h2 class="text-3xl font-serif-vintage font-bold text-[#3C422E] mt-3">The Kitchen Counter Upgrade</h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
-          <p class="text-4xl font-extrabold text-indigo-600 mb-1">94%</p>
-          <p class="font-bold text-slate-800 text-sm">Sharper Jawline Definition</p>
-          <p class="text-slate-500 text-xs mt-1">Measured via 3D facial topography after 2 weeks</p>
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- Old Grocery Store Jug -->
+        <div class="bg-white rounded-3xl p-6 border-2 border-[#3C422E]/30 text-xs space-y-3 opacity-80">
+          <p class="font-mono-tag font-bold uppercase tracking-wider text-rose-700">❌ The Typical Supermarket Glass Jug</p>
+          <ul class="space-y-2 text-[#555d41]">
+            <li>• Blended from mystery olives across 6 countries and stored in bulk tanks for 18+ months.</li>
+            <li>• Heavy slippery glass bottle causes greasy kitchen rings and messy glugs.</li>
+            <li>• Low polyphenol count (&lt; 150 mg/kg) because of industrial heat refinement.</li>
+          </ul>
         </div>
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
-          <p class="text-4xl font-extrabold text-indigo-600 mb-1">88%</p>
-          <p class="font-bold text-slate-800 text-sm">Reduced Morning Puffiness</p>
-          <p class="text-slate-500 text-xs mt-1">Reported within 10 minutes of single morning session</p>
-        </div>
-        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center shadow-sm">
-          <p class="text-4xl font-extrabold text-indigo-600 mb-1">91%</p>
-          <p class="font-bold text-slate-800 text-sm">Firmer Skin Elasticity</p>
-          <p class="text-slate-500 text-xs mt-1">Demonstrated significant collagen regeneration index</p>
+
+        <!-- Picual & Co Squeeze Bottle -->
+        <div class="bg-[#FBF8F2] rounded-3xl p-6 border-2 border-[#3C422E] retro-shadow-sm text-xs space-y-3">
+          <p class="font-mono-tag font-bold uppercase tracking-wider text-[#3C422E]">✓ Picual &amp; Co. Chef Squeeze Bottle</p>
+          <ul class="space-y-2 text-[#3C422E] font-medium">
+            <li>• 100% single-estate Spanish Picual olives harvested early for maximum pepper &amp; grass notes.</li>
+            <li>• Food-grade squeezable chef bottle with directional pour spout—no glugging, zero drips.</li>
+            <li>• Cold-extracted under 22°C with 620 mg/kg active polyphenols certified by independent lab.</li>
+          </ul>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Sticky Mobile Add to Cart (ATC) Bar -->
-  <aside class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 z-50 shadow-2xl flex items-center justify-between gap-3">
+  <!-- Sticky Mobile Add to Squeeze Drawer Bar -->
+  <aside class="md:hidden fixed bottom-0 left-0 right-0 bg-[#FBF8F2] border-t-2 border-[#3C422E] p-3 z-50 flex items-center justify-between gap-3 shadow-xl">
     <div>
-      <div class="text-[11px] text-slate-500 font-medium">Selected: <span id="mobile-tier-name" class="font-bold text-slate-900">Duo Pack</span></div>
-      <div class="text-lg font-extrabold text-indigo-600 leading-tight" id="mobile-price">$139.00</div>
+      <div class="text-[10px] font-mono-tag text-[#555d41]">Selected: <strong id="mob-bundle-name" class="text-[#3C422E]">The Duo</strong></div>
+      <div class="text-base font-extrabold text-[#3C422E] font-mono-tag" id="mob-price">$30.60</div>
     </div>
-    <button onclick="handleAddToCart()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-lg shadow-indigo-400/30 flex items-center gap-2">
-      <span>Add to Cart</span>
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    <button onclick="handleAddToCart()" class="retro-btn bg-[#D1E030] text-[#3C422E] text-xs font-extrabold uppercase tracking-wider px-5 py-3 rounded-full border-2 border-[#3C422E] retro-shadow-sm">
+      Add To Cart
     </button>
   </aside>
 
   <!-- Footer -->
-  <footer class="mt-16 border-t border-slate-200 py-8 bg-white text-center text-xs text-slate-400">
-    <p>AURA Pro™ · High-Conversion CRO Showcase Engineered for <strong>Electric Eye Agency</strong></p>
+  <footer class="mt-20 border-t-2 border-[#3C422E] py-8 text-center text-xs font-mono-tag text-[#555d41] bg-[#FBF8F2]">
+    <p>Picual &amp; Co.™ · Taste-First DTC Rebuild Inspired by Graza &amp; Olipop · Built for <strong>Electric Eye Agency</strong></p>
   </footer>
 
-  <!-- Script for Interactivity -->
   <script>
-    let currentPrice = 139;
-    let currentTierName = "2x Duo Glow Pack";
+    let basePrice = 36;
+    let isSub = true;
+    let currentBundleTitle = "The Drizzle & Sizzle Duo";
+    let cadence = "30 Days";
 
-    function selectTier(tierNum, price, oldPrice) {
-      currentPrice = price;
-      // Reset classes
-      document.querySelectorAll('.tier-card').forEach(card => {
-        card.classList.remove('border-indigo-600', 'bg-indigo-50/40');
-        card.classList.add('border-slate-200');
-      });
-      document.querySelectorAll('input[name="tier"]').forEach(radio => radio.checked = false);
-
-      const targetCard = document.getElementById('tier-' + tierNum);
-      const targetRadio = document.getElementById('radio-' + tierNum);
-      targetCard.classList.remove('border-slate-200');
-      targetCard.classList.add('border-indigo-600', 'bg-indigo-50/40');
-      targetRadio.checked = true;
-
-      if(tierNum === 1) currentTierName = "1x Starter Pack";
-      if(tierNum === 2) currentTierName = "2x Duo Glow Pack";
-      if(tierNum === 3) currentTierName = "3x Family Vault";
-
-      document.getElementById('btn-price').textContent = '$' + price + '.00';
-      document.getElementById('mobile-price').textContent = '$' + price + '.00';
-      document.getElementById('mobile-tier-name').textContent = currentTierName;
+    function updatePrice() {
+      const finalPrice = isSub ? (basePrice * 0.85).toFixed(2) : basePrice.toFixed(2);
+      document.getElementById('final-price').textContent = '$' + finalPrice;
+      document.getElementById('mob-price').textContent = '$' + finalPrice + (isSub ? ' /mo' : '');
     }
 
-    function scrollToCheckout() {
-      document.getElementById('checkout-box').scrollIntoView({ behavior: 'smooth' });
+    function selectBundle(tierNum, price, oldPrice) {
+      basePrice = price;
+      document.querySelectorAll('.bundle-card').forEach(c => {
+        c.classList.remove('bg-[#F6E6D9]', 'border-[#3C422E]', 'retro-shadow-sm');
+        c.classList.add('bg-white', 'border-[#3C422E]/40');
+      });
+      document.querySelectorAll('input[name="bundle"]').forEach(r => r.checked = false);
+
+      const activeCard = document.getElementById('bundle-' + tierNum);
+      const activeRadio = document.getElementById('b-radio-' + tierNum);
+      activeCard.classList.remove('bg-white', 'border-[#3C422E]/40');
+      activeCard.classList.add('bg-[#F6E6D9]', 'border-[#3C422E]', 'retro-shadow-sm');
+      activeRadio.checked = true;
+
+      if(tierNum === 1) currentBundleTitle = "The Drizzle & Sizzle Duo";
+      if(tierNum === 2) currentBundleTitle = "The Solo Drizzle";
+      if(tierNum === 3) currentBundleTitle = "The Kitchen Vault";
+      document.getElementById('mob-bundle-name').textContent = currentBundleTitle;
+
+      updatePrice();
+    }
+
+    function setPurchaseType(type) {
+      isSub = (type === 'sub');
+      const btnSub = document.getElementById('btn-sub');
+      const btnOnce = document.getElementById('btn-once');
+      const cadenceBox = document.getElementById('cadence-box');
+
+      if(isSub) {
+        btnSub.classList.add('bg-[#D1E030]', 'border-[#3C422E]', 'retro-shadow-sm');
+        btnSub.classList.remove('bg-white', 'border-[#3C422E]/40');
+        btnOnce.classList.remove('bg-[#D1E030]', 'border-[#3C422E]', 'retro-shadow-sm');
+        btnOnce.classList.add('bg-white', 'border-[#3C422E]/40');
+        cadenceBox.style.display = 'flex';
+      } else {
+        btnOnce.classList.add('bg-[#D1E030]', 'border-[#3C422E]', 'retro-shadow-sm');
+        btnOnce.classList.remove('bg-white', 'border-[#3C422E]/40');
+        btnSub.classList.remove('bg-[#D1E030]', 'border-[#3C422E]', 'retro-shadow-sm');
+        btnSub.classList.add('bg-white', 'border-[#3C422E]/40');
+        cadenceBox.style.display = 'none';
+      }
+      updatePrice();
+    }
+
+    function setCadence(btn, period) {
+      cadence = period;
+      document.querySelectorAll('.cadence-btn').forEach(b => {
+        b.classList.remove('bg-[#3C422E]', 'text-[#D1E030]', 'font-bold');
+        b.classList.add('bg-white', 'text-[#3C422E]', 'border', 'border-[#3C422E]');
+      });
+      btn.classList.remove('bg-white', 'text-[#3C422E]', 'border', 'border-[#3C422E]');
+      btn.classList.add('bg-[#3C422E]', 'text-[#D1E030]', 'font-bold');
+    }
+
+    function scrollToSelector() {
+      document.getElementById('bundle-selector').scrollIntoView({ behavior: 'smooth' });
     }
 
     function handleAddToCart() {
-      alert("⚡ [Demo Checkout Triggered]\nSelected: " + currentTierName + " ($" + currentPrice + ".00)\n\nIn a production Shopify build, this immediately routes to the 1-click cart drawer or accelerated checkout (Shop Pay / Apple Pay).");
+      const typeStr = isSub ? ("Subscription (Every " + cadence + " - 15% Off)") : "One-Time Purchase";
+      alert("🫒 [Tactile Cart Drawer Triggered]\nItem: " + currentBundleTitle + "\nPlan: " + typeStr + "\nTotal: " + document.getElementById('final-price').textContent + "\n\nIn a production Shopify Plus build, this directly triggers the slide-out mini-cart drawer with free refill spout upsell.");
     }
+
+    updatePrice();
   </script>
 </body>
 </html>
