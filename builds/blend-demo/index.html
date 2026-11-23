@@ -3,19 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NOOTRA BIO-FLOW · Scientific Cellular Nootropic &amp; Refill System — Blend Commerce Showcase</title>
+  <title>NOOTRA BIO-FLOW · Scientific Cellular Nootropic &amp; Refill System</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --canvas: #F4F1EA;
       --canvas-light: #FAF8F5;
       --forest: #15241C;
-      --forest-tint: #1F362A;
+      --forest-light: #20382B;
       --mint: #34D399;
       --hairline: rgba(21, 36, 28, 0.14);
+    }
+    * {
+      border-radius: 0px !important;
     }
     body {
       font-family: 'Space Grotesk', sans-serif;
@@ -37,21 +40,26 @@
     .hairline-t {
       border-top: 1px solid var(--hairline);
     }
+    .editorial-headline {
+      font-size: clamp(44px, 5.5vw, 84px);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+    }
     .sub-card {
-      transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
     }
   </style>
 </head>
-<body class="selection:bg-[#15241C] selection:text-[#FAF8F5] pb-24 md:pb-16 antialiased">
+<body class="selection:bg-[#15241C] selection:text-[#FAF8F5] pb-28 md:pb-16 antialiased">
 
   <!-- Clinical Provenance Top Ticker -->
-  <aside class="hairline-b bg-[#15241C] text-[#FAF8F5] py-2 px-6 text-xs font-mono-assay tracking-wider flex flex-col sm:flex-row items-center justify-between">
+  <aside class="hairline-b bg-[#15241C] text-[#FAF8F5] py-2.5 px-6 lg:px-12 text-xs font-mono-assay tracking-wider flex flex-col sm:flex-row items-center justify-between">
     <div class="flex items-center gap-2 text-[11px] uppercase">
-      <span class="w-1.5 h-1.5 rounded-full bg-[#34D399] animate-pulse"></span>
+      <span class="w-2 h-2 bg-[#34D399] inline-block"></span>
       <span>Seed-Grade Formulations · Clinical Assay Lot N° BF-2026.11</span>
     </div>
     <div class="text-[11px] text-[#34D399] tracking-wider mt-1 sm:mt-0 uppercase">
-      Month 1: Complimentary Emerald Glass Welcome Vessel ($34 Value Included)
+      Month 1 Gift: UV-Protective Emerald Glass Welcome Jar ($34 Included)
     </div>
   </aside>
 
@@ -59,8 +67,8 @@
   <header class="hairline-b bg-[#FAF8F5]/90 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
       <div class="flex items-center gap-4">
-        <a href="#" class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-full bg-[#15241C] flex items-center justify-center text-[#FAF8F5] text-xs font-mono-assay font-bold">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-8 h-8 bg-[#15241C] flex items-center justify-center text-[#FAF8F5] text-xs font-mono-assay font-bold">
             NB
           </div>
           <span class="font-serif-clinical text-2xl sm:text-3xl font-normal tracking-tight text-[#15241C]">
@@ -68,122 +76,131 @@
           </span>
         </a>
         <span class="hidden lg:inline-block ml-4 px-3 py-1 text-[10px] font-mono-assay font-bold uppercase tracking-wider bg-[#F4F1EA] text-[#15241C] border border-[#15241C]/20">
-          Blend Retention Architecture
+          Retention Architecture Showcase
         </span>
       </div>
 
-      <nav class="hidden md:flex items-center gap-8 text-xs tracking-wider uppercase text-[#15241C]/70 font-medium">
-        <a href="#clinical-trials" class="hover:text-[#15241C] transition">Clinical Trials</a>
-        <a href="#strain-matrix" class="hover:text-[#15241C] transition">Strain Matrix</a>
-        <a href="#refill-system" class="hover:text-[#15241C] transition">Refill System</a>
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono-assay tracking-wider uppercase text-[#15241C]/70">
+        <a href="#clinical-trials" class="hover:text-[#15241C] transition">Double-Blind Trials</a>
+        <a href="#strain-matrix" class="hover:text-[#15241C] transition">Strain Assays</a>
+        <a href="#refill-protocol" class="hover:text-[#15241C] transition">Refill System</a>
       </nav>
 
       <div class="flex items-center gap-4">
         <span class="text-xs font-mono-assay text-[#15241C] hidden sm:inline">28,400+ Active Subscriptions</span>
-        <button onclick="scrollToMembership()" class="bg-[#15241C] text-[#FAF8F5] hover:bg-[#1F362A] text-xs uppercase tracking-wider font-semibold px-5 py-2.5 transition">
+        <button onclick="scrollToMembership()" class="bg-[#15241C] hover:bg-[#20382B] text-[#FAF8F5] text-xs font-mono-assay uppercase tracking-wider font-semibold px-5 py-2.5 transition">
           Start Membership
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero & Retention Sandbox -->
-  <main class="max-w-7xl mx-auto px-6 lg:px-12 pt-10 sm:pt-16">
+  <!-- Hero & Retention Sandbox (12-Column Asymmetric Grid) -->
+  <main class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 sm:pt-24">
+    
+    <div class="max-w-4xl mb-16">
+      <div class="inline-flex items-center gap-2 text-xs font-mono-assay font-bold uppercase tracking-widest text-[#15241C] bg-[#FAF8F5] px-3 py-1 border border-[#15241C]/30 mb-4">
+        Zero Single-Use Plastic · 100% Home Compostable Refills
+      </div>
+      <h1 class="font-serif-clinical font-normal text-[#15241C] editorial-headline">
+        Calibrated Synaptic Energy. <br>
+        <span class="italic text-[#15241C]/70">Zero Afternoon Crash.</span>
+      </h1>
+      <p class="mt-6 text-base sm:text-lg text-[#15241C]/75 max-w-2xl font-light leading-relaxed">
+        A clinical dual-chamber cellular nootropic engineered to optimize working memory, sharpen visual acuity, and smooth adrenal cortisol rhythm. Delivered in a refillable emerald apothecary jar.
+      </p>
+    </div>
+
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       
-      <!-- Left Column: Scientific Botanical Showcase -->
+      <!-- Left Column: Real Editorial Photography & Unboxing System -->
       <div class="lg:col-span-7 space-y-8">
         
-        <!-- Physical Unboxing Artifact (Seed.com Aesthetic) -->
-        <div class="relative bg-[#FAF8F5] hairline-border p-8 sm:p-12 overflow-hidden">
+        <!-- Physical Unboxing Artifact with Real High-Res Photography -->
+        <div class="relative bg-[#FAF8F5] hairline-border p-6 sm:p-10">
           
           <div class="flex items-center justify-between text-xs font-mono-assay uppercase tracking-widest text-[#15241C]/70 mb-6">
-            <span>The Sustainable Starter System</span>
-            <span class="text-[#15241C] font-bold">100% Zero Single-Use Plastic</span>
+            <span>Physical Starter Kit Architecture</span>
+            <span class="text-[#15241C] font-bold">Carbon-Neutral Delivery</span>
           </div>
 
-          <!-- Physical Packaging Illustration -->
-          <div class="py-8 my-4 flex flex-col sm:flex-row items-center justify-center gap-8">
+          <!-- Editorial Botanical Glassware Photo -->
+          <div class="relative overflow-hidden border border-[#15241C]/20 bg-[#EFECE3] aspect-[16/10] mb-6">
+            <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=80" alt="Dark green glass apothecary jars and natural bio-active compounds" class="w-full h-full object-cover">
+            <div class="absolute bottom-4 left-4 right-4 bg-[#FAF8F5]/95 backdrop-blur-sm border border-[#15241C]/20 p-4 flex items-center justify-between text-xs font-mono-assay">
+              <span>Month 1: Emerald Glass Welcome Vessel</span>
+              <span class="text-[#15241C] font-bold">Month 2+: Compostable Bio-Pouches</span>
+            </div>
+          </div>
+
+          <!-- Sustainable Lifecycle 2-Phase Cards -->
+          <div class="grid sm:grid-cols-2 gap-4">
             
-            <!-- UV Protective Emerald Glass Apothecary Jar (Month 1) -->
-            <div class="w-52 h-72 bg-[#0d1e15] border border-[#1d3a2b] p-6 text-[#FAF8F5] flex flex-col justify-between text-center shadow-lg relative group">
-              <span class="absolute -top-3 left-4 bg-[#34D399] text-[#15241C] text-[9px] font-mono-assay font-bold uppercase px-2 py-0.5">
-                Month 1 Gift
-              </span>
-              <div class="w-16 h-4 bg-[#1a382a] border-b border-[#294f3c] mx-auto -mt-6"></div>
-              
-              <div class="my-auto space-y-1">
-                <p class="text-[9px] font-mono-assay uppercase tracking-[0.2em] text-[#34D399]">Welcome Vessel</p>
-                <p class="font-serif-clinical text-2xl">BIO-FLOW</p>
-                <p class="text-[10px] opacity-75">Amber Glass UV-Block</p>
+            <div class="p-5 border border-[#15241C] bg-[#F4F1EA] space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[9px] font-mono-assay uppercase tracking-widest bg-[#15241C] text-[#34D399] px-2 py-0.5">
+                  Month 1 · Welcome Kit
+                </span>
+                <span class="text-xs font-mono-assay font-bold">Refill Forever</span>
               </div>
-
-              <div class="border-t border-[#1d3a2b] pt-3 text-[10px] font-mono-assay text-[#FAF8F5]/80">
-                <p>30-Day Infused Supply</p>
-                <p class="text-[#34D399] font-bold mt-0.5">Refill Forever</p>
-              </div>
+              <p class="font-serif-clinical text-xl font-normal text-[#15241C]">UV-Shield Emerald Jar</p>
+              <p class="text-xs text-[#15241C]/75 leading-relaxed font-light">
+                Custom blown heavy emerald glass blocks 100% of light degradation to preserve delicate bio-actives. Includes pocket glass travel vial.
+              </p>
             </div>
 
-            <!-- Plus Sign -->
-            <div class="text-xl font-mono-assay text-[#15241C]/40">+</div>
-
-            <!-- Bio-Compostable Refill Pouch (Month 2+) -->
-            <div class="w-52 h-72 bg-[#EFECE3] border-2 border-dashed border-[#15241C]/30 p-6 text-[#15241C] flex flex-col justify-between text-center relative">
-              <span class="absolute -top-3 left-4 bg-[#15241C] text-[#FAF8F5] text-[9px] font-mono-assay font-bold uppercase px-2 py-0.5">
-                Month 2+ Refills
-              </span>
-              
-              <div class="my-auto space-y-1">
-                <p class="text-[9px] font-mono-assay uppercase tracking-[0.2em] text-[#15241C]/60">Flat-Pack Mailer</p>
-                <p class="font-serif-clinical text-xl">Bio-Pouch</p>
-                <p class="text-[10px] opacity-70">Home Compostable Paper</p>
+            <div class="p-5 border border-[#15241C]/20 bg-white space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-[9px] font-mono-assay uppercase tracking-widest bg-[#EFECE3] text-[#15241C] px-2 py-0.5">
+                  Month 2+ · Mailbox Refills
+                </span>
+                <span class="text-xs font-mono-assay font-bold">Zero Plastic</span>
               </div>
-
-              <div class="border-t border-[#15241C]/15 pt-3 text-[10px] font-mono-assay text-[#15241C]/80">
-                <p>90-Day Fresh Harvest</p>
-                <p class="font-bold text-[#15241C]">Delivered to Mailbox</p>
-              </div>
+              <p class="font-serif-clinical text-xl font-normal text-[#15241C]">Home-Compostable Pouch</p>
+              <p class="text-xs text-[#15241C]/75 leading-relaxed font-light">
+                Oxygen-barrier bio-pouches derived from sustainably harvested wood pulp. Fully degrades in backyard soil within 90 days.
+              </p>
             </div>
 
           </div>
 
-          <!-- Scientific Assay Callouts -->
-          <div class="grid grid-cols-3 gap-3 pt-6 hairline-t text-xs font-mono-assay text-center">
-            <div class="p-3 bg-[#F4F1EA] border border-[#15241C]/10">
-              <p class="font-bold text-sm text-[#15241C]">1200 mg</p>
-              <p class="text-[10px] opacity-75">Lion's Mane Hericenones</p>
+          <!-- Clinical Potency Numbers -->
+          <div class="grid grid-cols-3 gap-3 pt-6 mt-6 hairline-t text-xs font-mono-assay text-center">
+            <div class="p-3 bg-[#F4F1EA] border border-[#15241C]/15">
+              <p class="font-bold text-base text-[#15241C]">1200 mg</p>
+              <p class="text-[10px] text-[#15241C]/70">Lion's Mane Hericenone</p>
             </div>
-            <div class="p-3 bg-[#F4F1EA] border border-[#15241C]/10">
-              <p class="font-bold text-sm text-[#15241C]">250 mg</p>
-              <p class="text-[10px] opacity-75">Uji L-Theanine Organic</p>
+            <div class="p-3 bg-[#F4F1EA] border border-[#15241C]/15">
+              <p class="font-bold text-base text-[#15241C]">250 mg</p>
+              <p class="text-[10px] text-[#15241C]/70">Kyoto Shaded L-Theanine</p>
             </div>
-            <div class="p-3 bg-[#F4F1EA] border border-[#15241C]/10">
-              <p class="font-bold text-sm text-[#15241C]">0.0 g</p>
-              <p class="text-[10px] opacity-75">Sugar · Zero Crash</p>
+            <div class="p-3 bg-[#F4F1EA] border border-[#15241C]/15">
+              <p class="font-bold text-base text-[#15241C]">0.0 g</p>
+              <p class="text-[10px] text-[#15241C]/70">Sugar / Artificial Sweetener</p>
             </div>
           </div>
         </div>
 
-        <!-- Seed-Style Clinical Bio-Assay Table -->
-        <div id="strain-matrix" class="bg-[#FAF8F5] hairline-border divide-y divide-[#15241C]/10 text-xs">
-          <div class="p-4 bg-[#15241C] text-[#FAF8F5] flex items-center justify-between font-mono-assay text-[11px] uppercase tracking-wider">
+        <!-- Clinical Bio-Assay Table -->
+        <div id="strain-matrix" class="bg-[#FAF8F5] hairline-border divide-y divide-[#15241C]/10 text-xs font-mono-assay">
+          <div class="p-4 bg-[#15241C] text-[#FAF8F5] flex items-center justify-between uppercase tracking-wider text-[11px]">
             <span>Biological Assay &amp; Strain Traceability</span>
-            <span class="text-[#34D399]">Batch Validated ✓</span>
+            <span class="text-[#34D399]">3rd-Party Lab Verified ✓</span>
           </div>
           <div class="grid grid-cols-12 p-4 items-center">
-            <span class="col-span-4 font-mono-assay text-[11px] font-bold text-[#15241C]">Hericenone Beta-Glucan</span>
-            <span class="col-span-5 text-[#15241C]/80">Dual-extracted organic fruiting body</span>
-            <span class="col-span-3 text-right font-mono-assay text-[11px] text-[#15241C]">Strain NT-804</span>
+            <span class="col-span-4 font-bold text-[#15241C]">Hericenone Beta-Glucan</span>
+            <span class="col-span-5 text-[#15241C]/75 font-sans">Dual-extracted organic fruiting body</span>
+            <span class="col-span-3 text-right text-[#15241C]">Strain NT-804</span>
           </div>
           <div class="grid grid-cols-12 p-4 items-center">
-            <span class="col-span-4 font-mono-assay text-[11px] font-bold text-[#15241C]">L-Theanine Amino Isolate</span>
-            <span class="col-span-5 text-[#15241C]/80">Kyoto shaded green tea leaf extract</span>
-            <span class="col-span-3 text-right font-mono-assay text-[11px] text-[#15241C]">Lot LT-109</span>
+            <span class="col-span-4 font-bold text-[#15241C]">L-Theanine Amino Isolate</span>
+            <span class="col-span-5 text-[#15241C]/75 font-sans">Kyoto shaded green tea leaf extract</span>
+            <span class="col-span-3 text-right text-[#15241C]">Lot LT-109</span>
           </div>
           <div class="grid grid-cols-12 p-4 items-center">
-            <span class="col-span-4 font-mono-assay text-[11px] font-bold text-[#15241C]">Phosphatidylserine 70%</span>
-            <span class="col-span-5 text-[#15241C]/80">Sunflower lecithin neuronal lipid</span>
-            <span class="col-span-3 text-right font-mono-assay text-[11px] text-[#15241C]">Assay PS-440</span>
+            <span class="col-span-4 font-bold text-[#15241C]">Phosphatidylserine 70%</span>
+            <span class="col-span-5 text-[#15241C]/75 font-sans">Sunflower lecithin neuronal lipid</span>
+            <span class="col-span-3 text-right text-[#15241C]">Assay PS-440</span>
           </div>
         </div>
 
@@ -194,25 +211,25 @@
         
         <div>
           <div class="flex items-center justify-between text-xs font-mono-assay uppercase tracking-widest text-[#15241C]/70 mb-2">
-            <span>Daily Synaptic Protocol</span>
+            <span>Daily Protocol</span>
             <span class="text-[#15241C] font-bold">98.2% Retention Index</span>
           </div>
-          <h1 class="font-serif-clinical text-3xl sm:text-4xl text-[#15241C] tracking-tight">
+          <h2 class="font-serif-clinical text-3xl sm:text-4xl text-[#15241C] tracking-tight">
             NOOTRA Bio-Flow™ Membership
-          </h1>
-          <p class="text-xs sm:text-sm text-[#15241C]/75 mt-2 leading-relaxed">
-            Clinically formulated to calibrate morning neurotransmitter output, sharpen working memory, and sustain 6+ hours of mental endurance without jitter.
+          </h2>
+          <p class="text-xs sm:text-sm text-[#15241C]/75 mt-2 leading-relaxed font-light">
+            Calibrate morning neurotransmitter synthesis and sharpen working memory without adrenal fatigue.
           </p>
         </div>
 
-        <!-- Interactive Plan Selection: Sustainable Membership vs Trial Box -->
+        <!-- Plan Selection (Membership vs Single Tub) -->
         <div class="space-y-3">
           <label class="block text-xs font-mono-assay font-bold uppercase tracking-wider text-[#15241C]">
-            Select Delivery Plan:
+            Step 1 · Select Delivery Plan:
           </label>
 
-          <!-- Plan 1: Membership (DEFAULT & RECOMMENDED) -->
-          <div onclick="setPlan('sub')" id="plan-sub-card" class="sub-card cursor-pointer border-2 border-[#15241C] bg-[#F4F1EA] p-4 relative">
+          <!-- Plan: Membership (DEFAULT) -->
+          <div onclick="setSubscriptionPlan('sub')" id="plan-sub-card" class="sub-card cursor-pointer border-2 border-[#15241C] bg-[#F4F1EA] p-4 relative">
             <span class="absolute -top-2.5 right-4 bg-[#15241C] text-[#34D399] text-[9px] font-mono-assay font-bold uppercase px-2.5 py-0.5 tracking-wider">
               Recommended · Save 25% + Free Jar
             </span>
@@ -221,7 +238,7 @@
                 <input type="radio" name="plan_type" id="radio-sub" checked class="mt-1 w-4 h-4 text-[#15241C] accent-[#15241C]">
                 <div>
                   <p class="font-bold text-sm text-[#15241C]">Sustainable Monthly Membership</p>
-                  <p class="text-xs text-[#15241C]/70 mt-0.5">Month 1: UV Glass Jar + Travel Vial ($34 value free)</p>
+                  <p class="text-xs text-[#15241C]/70 mt-0.5">Month 1: UV Emerald Jar + Travel Vial ($34 value free)</p>
                   <p class="text-xs text-[#15241C]/70">Month 2+: Compostable refill pouches shipped free</p>
                 </div>
               </div>
@@ -232,13 +249,13 @@
             </div>
           </div>
 
-          <!-- Plan 2: One-Time Purchase Box -->
-          <div onclick="setPlan('once')" id="plan-once-card" class="sub-card cursor-pointer hairline-border hover:border-[#15241C] bg-white p-4">
+          <!-- Plan: Single Box Trial -->
+          <div onclick="setSubscriptionPlan('once')" id="plan-once-card" class="sub-card cursor-pointer hairline-border hover:border-[#15241C] bg-white p-4">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3">
                 <input type="radio" name="plan_type" id="radio-once" class="w-4 h-4 text-[#15241C] accent-[#15241C]">
                 <div>
-                  <p class="font-bold text-sm text-[#15241C]">One-Time 30-Day Tub</p>
+                  <p class="font-bold text-sm text-[#15241C]">Single 30-Day Tub</p>
                   <p class="text-xs text-[#15241C]/60">Standard plastic container · No refill vessel</p>
                 </div>
               </div>
@@ -252,16 +269,16 @@
         <!-- Frequency Selector (Visible on Membership) -->
         <div id="cadence-container" class="space-y-2 pt-2 hairline-t">
           <label class="block text-xs font-mono-assay font-bold uppercase tracking-wider text-[#15241C]">
-            Refill Frequency:
+            Step 2 · Refill Cadence:
           </label>
           <div class="grid grid-cols-3 gap-2">
-            <button onclick="setFrequency(this, 'Every 30 Days')" class="freq-btn border border-[#15241C] bg-[#15241C] text-[#FAF8F5] text-xs font-mono-assay py-2 font-medium transition">
+            <button onclick="setCadenceSelection(this, 'Every 30 Days')" class="cadence-btn border border-[#15241C] bg-[#15241C] text-[#FAF8F5] text-xs font-mono-assay py-2 font-medium transition">
               30 Days
             </button>
-            <button onclick="setFrequency(this, 'Every 60 Days')" class="freq-btn hairline-border hover:border-[#15241C] bg-white text-[#15241C] text-xs font-mono-assay py-2 transition">
+            <button onclick="setCadenceSelection(this, 'Every 60 Days')" class="cadence-btn hairline-border hover:border-[#15241C] bg-white text-[#15241C] text-xs font-mono-assay py-2 transition">
               60 Days
             </button>
-            <button onclick="setFrequency(this, 'Every 90 Days')" class="freq-btn hairline-border hover:border-[#15241C] bg-white text-[#15241C] text-xs font-mono-assay py-2 transition">
+            <button onclick="setCadenceSelection(this, 'Every 90 Days')" class="cadence-btn hairline-border hover:border-[#15241C] bg-white text-[#15241C] text-xs font-mono-assay py-2 transition">
               90 Days
             </button>
           </div>
@@ -269,16 +286,16 @@
 
         <!-- Primary Retention CTA -->
         <div class="space-y-3 pt-2">
-          <button onclick="handleMembershipSubmit()" class="w-full bg-[#15241C] hover:bg-[#1F362A] text-[#FAF8F5] py-4 px-6 text-xs uppercase tracking-[0.18em] font-semibold transition duration-300 flex items-center justify-center gap-3">
+          <button onclick="handleMembershipSubmit()" class="w-full bg-[#15241C] hover:bg-[#20382B] text-[#FAF8F5] py-4 px-6 text-xs font-mono-assay uppercase tracking-[0.18em] font-semibold transition duration-300 flex items-center justify-center gap-3">
             <span id="cta-button-label">Activate Membership</span>
             <span id="cta-price-display" class="bg-[#FAF8F5]/15 text-[#34D399] px-2.5 py-0.5 rounded text-xs font-mono-assay font-bold">$39.00 / mo</span>
           </button>
 
-          <!-- 1-Click Friction-Free Retention Promise -->
+          <!-- 1-Click Retention Reassurances -->
           <div class="pt-3 hairline-t space-y-2 text-[11px] font-mono-assay text-[#15241C]/70">
             <div class="flex items-center gap-2">
               <span class="text-[#34D399]">✦</span>
-              <span>1-Click SMS Portal: Pause, skip, or cancel via text anytime.</span>
+              <span>1-Click SMS Portal: Pause, skip, or cancel anytime.</span>
             </div>
             <div class="flex items-center gap-2">
               <span class="text-[#34D399]">✦</span>
@@ -294,66 +311,68 @@
       </div>
     </div>
 
-    <!-- Scientific Clinical Trial Comparison Section -->
-    <section id="clinical-trials" class="mt-28 py-16 hairline-t hairline-b">
-      <div class="text-center max-w-2xl mx-auto mb-12">
+    <!-- Clinical Endpoints Double-Blind Section -->
+    <section id="clinical-trials" class="mt-36 py-20 hairline-t hairline-b">
+      <div class="text-center max-w-2xl mx-auto mb-16">
         <span class="text-xs font-mono-assay uppercase tracking-widest text-[#34D399] bg-[#15241C] px-3 py-1">
           Double-Blind Clinical Endpoints
         </span>
-        <h2 class="font-serif-clinical text-3xl sm:text-4xl text-[#15241C] mt-4">Calibrated for Neuronal Synthesis</h2>
-        <p class="text-xs sm:text-sm text-[#15241C]/70 mt-2 font-mono-assay">Randomized cross-over study vs. placebos over 60 days of continuous morning supplementation.</p>
+        <h2 class="font-serif-clinical text-3xl sm:text-5xl text-[#15241C] mt-4 font-normal">
+          Measured Cognitive Outcomes
+        </h2>
+        <p class="text-xs sm:text-sm text-[#15241C]/70 mt-3 font-mono-assay">Randomized cross-over trial vs. placebos over 60 days of continuous morning protocol.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <div class="bg-[#FAF8F5] hairline-border p-6 text-center space-y-2">
-          <p class="font-mono-assay text-3xl font-bold text-[#15241C]">+38%</p>
-          <p class="font-bold text-xs uppercase tracking-wider text-[#15241C]">Working Memory Retention</p>
-          <p class="text-[11px] text-[#15241C]/70 leading-relaxed">Measured via standardized CogState cognitive battery within 45 minutes of consumption.</p>
+        <div class="bg-[#FAF8F5] hairline-border p-8 text-center space-y-2">
+          <p class="font-mono-assay text-4xl font-bold text-[#15241C]">+38%</p>
+          <p class="font-bold text-xs uppercase tracking-wider text-[#15241C] font-mono-assay">Working Memory Retention</p>
+          <p class="text-xs text-[#15241C]/70 leading-relaxed font-light">Assessed via standardized CogState cognitive battery within 45 minutes of consumption.</p>
         </div>
-        <div class="bg-[#FAF8F5] hairline-border p-6 text-center space-y-2">
-          <p class="font-mono-assay text-3xl font-bold text-[#15241C]">-42%</p>
-          <p class="font-bold text-xs uppercase tracking-wider text-[#15241C]">Afternoon Cortisol Spike</p>
-          <p class="text-[11px] text-[#15241C]/70 leading-relaxed">Salivary cortisol markers confirmed smooth adrenal rhythm without 2:00 PM crash.</p>
+        <div class="bg-[#FAF8F5] hairline-border p-8 text-center space-y-2">
+          <p class="font-mono-assay text-4xl font-bold text-[#15241C]">-42%</p>
+          <p class="font-bold text-xs uppercase tracking-wider text-[#15241C] font-mono-assay">Afternoon Cortisol Spike</p>
+          <p class="text-xs text-[#15241C]/70 leading-relaxed font-light">Salivary cortisol markers verified smooth adrenal curve without mid-afternoon crash.</p>
         </div>
-        <div class="bg-[#FAF8F5] hairline-border p-6 text-center space-y-2">
-          <p class="font-mono-assay text-3xl font-bold text-[#15241C]">91.4%</p>
-          <p class="font-bold text-xs uppercase tracking-wider text-[#15241C]">Sustained Flow State</p>
-          <p class="text-[11px] text-[#15241C]/70 leading-relaxed">Participants reported effortless deep focus on analytical tasks exceeding 4 consecutive hours.</p>
+        <div class="bg-[#FAF8F5] hairline-border p-8 text-center space-y-2">
+          <p class="font-mono-assay text-4xl font-bold text-[#15241C]">91.4%</p>
+          <p class="font-bold text-xs uppercase tracking-wider text-[#15241C] font-mono-assay">Sustained Flow State</p>
+          <p class="text-xs text-[#15241C]/70 leading-relaxed font-light">Participants reported effortless deep focus on analytical tasks exceeding 4 continuous hours.</p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Sticky Mobile Retention Bar -->
-  <aside class="md:hidden fixed bottom-0 left-0 right-0 bg-[#FAF8F5] hairline-t p-3 z-50 flex items-center justify-between">
+  <!-- Sticky Mobile Retention Purchase Bar -->
+  <aside class="md:hidden fixed bottom-0 left-0 right-0 bg-[#FAF8F5] hairline-t p-3.5 z-50 flex items-center justify-between">
     <div>
-      <div class="text-[10px] font-mono-assay text-[#15241C]/70">Selected: <strong id="mobile-plan-title" class="text-[#15241C]">Membership</strong></div>
-      <div class="text-sm font-mono-assay font-bold text-[#15241C]" id="mobile-price-tag">$39.00/mo</div>
+      <div class="text-[10px] font-mono-assay text-[#15241C]/70">Selected: <strong id="mobile-plan-label" class="text-[#15241C]">Membership</strong></div>
+      <div class="text-sm font-mono-assay font-bold text-[#15241C]" id="mobile-price-num">$39.00/mo</div>
     </div>
-    <button onclick="handleMembershipSubmit()" class="bg-[#15241C] text-[#FAF8F5] text-xs font-mono-assay uppercase tracking-wider px-4 py-2.5 font-bold">
-      Claim Free Vessel
+    <button onclick="handleMembershipSubmit()" class="bg-[#15241C] text-[#FAF8F5] text-xs font-mono-assay uppercase tracking-wider px-5 py-2.5 font-bold">
+      Claim Free Jar
     </button>
   </aside>
 
   <!-- Footer -->
   <footer class="hairline-t py-12 bg-[#FAF8F5] text-center text-xs font-mono-assay text-[#15241C]/60">
-    <p>NOOTRA Bio-Flow™ · Scientific Subscription &amp; Retention Architecture Built for <strong>Blend Commerce Roster</strong></p>
+    <p>NOOTRA Bio-Flow™ · Scientific Subscription Architecture Built for <strong>Blend Commerce Roster</strong></p>
   </footer>
 
   <script>
-    let isMembership = true;
-    let frequency = 'Every 30 Days';
+    let isSubPlan = true;
+    let selectedCadence = 'Every 30 Days';
 
-    function setPlan(type) {
-      isMembership = (type === 'sub');
+    function setSubscriptionPlan(type) {
+      isSubPlan = (type === 'sub');
       const cardSub = document.getElementById('plan-sub-card');
       const cardOnce = document.getElementById('plan-once-card');
       const radioSub = document.getElementById('radio-sub');
       const radioOnce = document.getElementById('radio-once');
       const cadenceBox = document.getElementById('cadence-container');
 
-      if (isMembership) {
+      if (isSubPlan) {
         cardSub.classList.add('border-2', 'border-[#15241C]', 'bg-[#F4F1EA]');
         cardSub.classList.remove('hairline-border', 'bg-white');
         cardOnce.classList.remove('border-2', 'border-[#15241C]', 'bg-[#F4F1EA]');
@@ -364,8 +383,8 @@
 
         document.getElementById('cta-button-label').textContent = 'Activate Membership';
         document.getElementById('cta-price-display').textContent = '$39.00 / mo';
-        document.getElementById('mobile-price-tag').textContent = '$39.00/mo';
-        document.getElementById('mobile-plan-title').textContent = 'Membership';
+        document.getElementById('mobile-price-num').textContent = '$39.00/mo';
+        document.getElementById('mobile-plan-label').textContent = 'Membership';
       } else {
         cardOnce.classList.add('border-2', 'border-[#15241C]', 'bg-[#F4F1EA]');
         cardOnce.classList.remove('hairline-border', 'bg-white');
@@ -377,14 +396,14 @@
 
         document.getElementById('cta-button-label').textContent = 'Order Single Tub';
         document.getElementById('cta-price-display').textContent = '$52.00';
-        document.getElementById('mobile-price-tag').textContent = '$52.00';
-        document.getElementById('mobile-plan-title').textContent = 'Single Tub';
+        document.getElementById('mobile-price-num').textContent = '$52.00';
+        document.getElementById('mobile-plan-label').textContent = 'Single Tub';
       }
     }
 
-    function setFrequency(btn, freq) {
-      frequency = freq;
-      document.querySelectorAll('.freq-btn').forEach(b => {
+    function setCadenceSelection(btn, cadence) {
+      selectedCadence = cadence;
+      document.querySelectorAll('.cadence-btn').forEach(b => {
         b.classList.remove('border-[#15241C]', 'bg-[#15241C]', 'text-[#FAF8F5]');
         b.classList.add('hairline-border', 'bg-white', 'text-[#15241C]');
       });
@@ -397,8 +416,8 @@
     }
 
     function handleMembershipSubmit() {
-      if (isMembership) {
-        alert("🌱 [Klaviyo & Recharge Subscription Flow]\nPlan: Sustainable Membership (" + frequency + ")\nIncludes: Free Emerald UV Welcome Vessel + 25% Off Lifetime Refills ($39.00/mo).\n\nPowered by seamless 1-click SMS portal management.");
+      if (isSubPlan) {
+        alert("🌱 [Klaviyo & Recharge Subscription Flow]\nPlan: Sustainable Membership (" + selectedCadence + ")\nIncludes: Free UV Emerald Welcome Vessel + 25% Off Lifetime Refills ($39.00/mo).\n\nPowered by 1-click SMS portal management.");
       } else {
         alert("📦 [Single Trial Order]\nPlan: One-Time 30-Day Tub ($52.00).\nStandard checkout.");
       }

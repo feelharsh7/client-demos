@@ -3,130 +3,266 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client Demos | Taste-First 72-Hour Conversion Sprints</title>
+  <title>CLIENT DEMOS · 72-Hour White-Label Conversion Sprints</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    :root {
+      --bg: #090A0C;
+      --surface: #101216;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.16);
+      --text-muted: #8A8F98;
+      --accent: #E2E8F0;
+    }
+    * {
+      border-radius: 0px !important;
+    }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: #EDEDED;
+    }
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .font-mono-tech {
+      font-family: 'Space Mono', monospace;
+    }
+    .hairline-border {
+      border: 1px solid var(--border);
+    }
+    .hairline-b {
+      border-bottom: 1px solid var(--border);
+    }
+    .hairline-t {
+      border-top: 1px solid var(--border);
+    }
+    .hairline-r {
+      border-right: 1px solid var(--border);
+    }
+    .hairline-l {
+      border-left: 1px solid var(--border);
+    }
+    .editorial-headline {
+      font-size: clamp(40px, 5.5vw, 84px);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+    }
+    .table-row-hover {
+      transition: background-color 450ms cubic-bezier(0.16, 1, 0.3, 1), border-color 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .table-row-hover:hover {
+      background-color: #12151B;
+      border-color: var(--border-strong);
+    }
   </style>
 </head>
-<body class="bg-[#0b0c0e] text-slate-100 min-h-screen flex flex-col selection:bg-amber-400 selection:text-black">
-  <!-- Navigation -->
-  <header class="border-b border-slate-800/80 backdrop-blur-md bg-[#0b0c0e]/80 sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <span class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center font-bold text-black shadow-lg shadow-amber-500/20">⚡</span>
-        <span class="font-bold tracking-tight text-lg text-white">Client Demos</span>
-        <span class="text-xs text-amber-400 bg-amber-950/60 px-2.5 py-0.5 rounded-full border border-amber-800 hidden sm:inline">Taste-First Sprints</span>
-      </div>
-      <a href="https://github.com/feelharsh7/client-demos" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-slate-400 hover:text-white transition flex items-center gap-2 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg">
-        <span>GitHub Repository</span>
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-      </a>
-    </div>
-  </header>
+<body class="selection:bg-white selection:text-black antialiased">
 
-  <!-- Hero Section -->
-  <main class="flex-1 max-w-6xl w-full mx-auto px-6 py-14">
-    <div class="max-w-3xl space-y-5">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">
-        Anti-AI-Slop · Taste-Extracted Proof of Work
-      </div>
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.1]">
-        Boutique Agency <br>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-300 to-emerald-400">White-Label Conversion Sprints</span>
-      </h1>
-      <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl">
-        Live proof-of-concept Shopify and D2C landing pages engineered with visceral taste, benchmarked against real-world icons like Graza, Olipop, Toteme, Aesop, and Seed. Delivered in 72 hours.
-      </p>
-    </div>
-
-    <!-- Active Demos Section -->
-    <div class="mt-14 pt-10 border-t border-slate-800/80">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-xl font-extrabold text-white">Live Rebuild Showcase</h2>
-          <p class="text-xs text-slate-400 mt-1">Each demo is built from live benchmark taste extraction with custom typography and tactile micro-interactions.</p>
-        </div>
-        <span class="text-xs font-semibold text-emerald-400 bg-emerald-950/80 border border-emerald-800 px-3 py-1 rounded-full flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> 3 Builds Live
+  <!-- Studio Header -->
+  <header class="hairline-b bg-[#090A0C]/90 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <a href="#" class="font-display font-bold text-sm tracking-tight text-white uppercase flex items-center gap-3">
+          <span class="w-3 h-3 bg-white inline-block"></span>
+          <span>CLIENT DEMOS / SPRINT STUDIO</span>
+        </a>
+        <span class="hidden md:inline-block text-[10px] font-mono-tech tracking-[0.16em] uppercase text-[#8A8F98] hairline-l pl-6">
+          72-Hour White-Label Execution
         </span>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="flex items-center gap-6">
+        <div class="hidden sm:flex items-center gap-2 text-[11px] font-mono-tech uppercase text-[#8A8F98]">
+          <span class="w-1.5 h-1.5 bg-emerald-400 inline-block"></span>
+          <span>Sprints Active · $950 USD Flat</span>
+        </div>
+        <a href="https://github.com/feelharsh7/client-demos" target="_blank" rel="noopener noreferrer" class="hairline-border hover:border-white text-xs font-mono-tech uppercase px-4 py-2 text-[#EDEDED] transition">
+          Repository ↗
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Stark Swiss Editorial) -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-24 pb-20">
+    <div class="grid lg:grid-cols-12 gap-12 items-end">
+      
+      <div class="lg:col-span-8 space-y-6">
+        <p class="text-[11px] font-mono-tech uppercase tracking-[0.2em] text-[#8A8F98]">
+          [ Studio Index · Proof of Work 2026 ]
+        </p>
+        <h1 class="font-display font-bold text-white editorial-headline">
+          High-Ticket E-Commerce <br>
+          <span class="text-[#8A8F98] font-normal">Conversion Overhauls.</span>
+        </h1>
+        <p class="text-base sm:text-lg text-[#8A8F98] max-w-2xl font-light leading-relaxed">
+          We engineer bespoke, live-coded Shopify and D2C landing pages for partner agencies and high-growth brands. Every sprint is grounded in live taste extraction, strict anti-AI guardrails, and rapid 72-hour deployment.
+        </p>
+      </div>
+
+      <div class="lg:col-span-4 hairline-border bg-[#0D0E12] p-6 space-y-4">
+        <p class="text-[10px] font-mono-tech uppercase tracking-[0.18em] text-[#8A8F98]">Sprint Terms &amp; Scope</p>
+        <div class="space-y-2 text-xs font-mono-tech">
+          <div class="flex justify-between py-1.5 hairline-b">
+            <span class="text-[#8A8F98]">Sprint Fee</span>
+            <span class="font-bold text-white">$950 USD (₹80,000)</span>
+          </div>
+          <div class="flex justify-between py-1.5 hairline-b">
+            <span class="text-[#8A8F98]">Turnaround</span>
+            <span class="text-white">72 Hours Guaranteed</span>
+          </div>
+          <div class="flex justify-between py-1.5 hairline-b">
+            <span class="text-[#8A8F98]">Deliverable</span>
+            <span class="text-white">Figma + Single-File HTML/Tailwind</span>
+          </div>
+          <div class="flex justify-between py-1.5">
+            <span class="text-[#8A8F98]">Deployment</span>
+            <span class="text-white">Live GitHub Pages + 60s Loom</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Architectural Live Index Table (Studio Freight / Linear Style) -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-32">
+    
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 pb-4 hairline-b gap-4">
+      <div>
+        <span class="text-[11px] font-mono-tech uppercase tracking-[0.2em] text-[#8A8F98]">Index / Selected Works</span>
+        <h2 class="font-display text-2xl font-bold text-white mt-1">Live Agency Rebuilds</h2>
+      </div>
+      <p class="text-xs font-mono-tech text-[#8A8F98]">3 Live Prototypes Deployed via GitHub Pages</p>
+    </div>
+
+    <!-- Editorial Table Rows -->
+    <div class="hairline-border divide-y divide-[rgba(255,255,255,0.08)] bg-[#0A0B0E]">
+      
+      <!-- Demo 01: Electric Eye (Graza / Olipop Archetype) -->
+      <a href="./builds/electric-eye-demo/" class="table-row-hover block p-6 sm:p-8 group">
+        <div class="grid lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-1 font-mono-tech text-xs text-[#8A8F98]">
+            01 / 03
+          </div>
+          <div class="lg:col-span-4">
+            <span class="text-[10px] font-mono-tech uppercase tracking-[0.16em] text-[#D1E030]">Tactile DTC · Early Harvest EVOO</span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-white group-hover:text-[#D1E030] transition duration-300 mt-1">
+              Picual &amp; Co. Squeeze EVOO
+            </h3>
+            <p class="text-xs text-[#8A8F98] mt-1 font-mono-tech">Tailored for: Electric Eye Agency (Chase Clymer)</p>
+          </div>
+          <div class="lg:col-span-5 text-xs text-[#8A8F98] font-light leading-relaxed">
+            Benchmarked against <span class="text-[#EDEDED]">graza.co</span> and <span class="text-[#EDEDED]">drinkolipop.com</span>. Features unbleached buttermilk canvas, hard offset retro shadows, tactile squeeze bundle tiers, and mobile sticky ATC bar.
+          </div>
+          <div class="lg:col-span-2 text-right">
+            <span class="hairline-border group-hover:border-white text-xs font-mono-tech uppercase px-4 py-2.5 inline-flex items-center gap-2 text-white transition">
+              <span>View Build</span>
+              <span class="group-hover:translate-x-1 transition duration-200">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Demo 02: Charle Agency (Toteme / Aesop Archetype) -->
+      <a href="./builds/charle-demo/" class="table-row-hover block p-6 sm:p-8 group">
+        <div class="grid lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-1 font-mono-tech text-xs text-[#8A8F98]">
+            02 / 03
+          </div>
+          <div class="lg:col-span-4">
+            <span class="text-[10px] font-mono-tech uppercase tracking-[0.16em] text-[#c79d72]">Quiet Luxury · Botanical Resins</span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-white group-hover:text-[#c79d72] transition duration-300 mt-1">
+              Atelier Vendôme Botanique
+            </h3>
+            <p class="text-xs text-[#8A8F98] mt-1 font-mono-tech">Tailored for: Charle Agency (Nicholas Dunn)</p>
+          </div>
+          <div class="lg:col-span-5 text-xs text-[#8A8F98] font-light leading-relaxed">
+            Benchmarked against <span class="text-[#EDEDED]">toteme.com</span> and <span class="text-[#EDEDED]">aesop.com</span>. Strict 0px radius, warm parchment linen canvas, architectural hairlines, literary editorial typography, and private client bespoke acquisition.
+          </div>
+          <div class="lg:col-span-2 text-right">
+            <span class="hairline-border group-hover:border-white text-xs font-mono-tech uppercase px-4 py-2.5 inline-flex items-center gap-2 text-white transition">
+              <span>View Build</span>
+              <span class="group-hover:translate-x-1 transition duration-200">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Demo 03: Blend Commerce (Seed.com Scientific Retention Archetype) -->
+      <a href="./builds/blend-demo/" class="table-row-hover block p-6 sm:p-8 group">
+        <div class="grid lg:grid-cols-12 gap-6 items-center">
+          <div class="lg:col-span-1 font-mono-tech text-xs text-[#8A8F98]">
+            03 / 03
+          </div>
+          <div class="lg:col-span-4">
+            <span class="text-[10px] font-mono-tech uppercase tracking-[0.16em] text-[#34D399]">Clinical DTC · Cellular Retention</span>
+            <h3 class="font-display text-xl sm:text-2xl font-bold text-white group-hover:text-[#34D399] transition duration-300 mt-1">
+              NOOTRA Bio-Flow™ System
+            </h3>
+            <p class="text-xs text-[#8A8F98] mt-1 font-mono-tech">Tailored for: Blend Commerce (Adam Pearce / Peter Gardner)</p>
+          </div>
+          <div class="lg:col-span-5 text-xs text-[#8A8F98] font-light leading-relaxed">
+            Benchmarked against <span class="text-[#EDEDED]">seed.com</span> and <span class="text-[#EDEDED]">mudwtr.com</span>. Glass Welcome Jar paired with zero-plastic compostable refill pouches, biological strain traceability assay, and 1-click SMS portal mechanics.
+          </div>
+          <div class="lg:col-span-2 text-right">
+            <span class="hairline-border group-hover:border-white text-xs font-mono-tech uppercase px-4 py-2.5 inline-flex items-center gap-2 text-white transition">
+              <span>View Build</span>
+              <span class="group-hover:translate-x-1 transition duration-200">→</span>
+            </span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- 3-Phase Sprint Protocol Architecture -->
+    <div class="mt-20 pt-16 hairline-t">
+      <div class="grid md:grid-cols-3 gap-8">
         
-        <!-- Demo Card 1: Electric Eye (Graza/Olipop Archetype) -->
-        <a href="./builds/electric-eye-demo/" class="group rounded-2xl border border-[#3C422E]/40 bg-[#161a14] p-6 flex flex-col justify-between hover:border-[#D1E030] transition duration-300 shadow-lg">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-[#D1E030]/10 text-[#D1E030] border border-[#D1E030]/20">Graza &amp; Olipop Craft</span>
-              <span class="text-[11px] font-mono text-slate-400">/electric-eye-demo/</span>
-            </div>
-            <h3 class="text-xl font-bold text-white group-hover:text-[#D1E030] transition">Picual &amp; Co. Squeeze EVOO</h3>
-            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-              Tactile, playful DTC early-harvest olive oil campaign. Features buttermilk/olive color blocking, hard offset retro shadows, stacked bundle cards, and chef squeeze bottle mechanics.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-800/60 text-xs flex items-center justify-between">
-            <span class="text-slate-400 font-medium">Style: Tactile DTC &amp; Bundles</span>
-            <span class="text-[#D1E030] font-bold group-hover:translate-x-1 transition flex items-center gap-1">
-              Preview Demo →
-            </span>
-          </div>
-        </a>
+        <div class="space-y-3">
+          <p class="text-[11px] font-mono-tech uppercase tracking-[0.2em] text-[#8A8F98]">Phase 01 · 24 Hours</p>
+          <h4 class="font-display text-lg font-bold text-white">Live Benchmark Extraction</h4>
+          <p class="text-xs text-[#8A8F98] leading-relaxed font-light">
+            We inspect 2–3 vertical market leaders using live browser automation, extracting exact typography scales, color restraint, and structural rhythms into a formal <code>DESIGN_TOKENS.md</code>.
+          </p>
+        </div>
 
-        <!-- Demo Card 2: Charle Agency (Toteme/Aesop Archetype) -->
-        <a href="./builds/charle-demo/" class="group rounded-2xl border border-[#3a3530]/60 bg-[#141312] p-6 flex flex-col justify-between hover:border-[#8E633C] transition duration-300 shadow-lg">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-[#8E633C]/20 text-[#c79d72] border border-[#8E633C]/30">Toteme &amp; Aesop Restraint</span>
-              <span class="text-[11px] font-mono text-slate-400">/charle-demo/</span>
-            </div>
-            <h3 class="text-xl font-bold text-white group-hover:text-[#c79d72] transition">Atelier Vendôme Botanique</h3>
-            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-              Quiet-luxury botanical fragrance &amp; resin flacon drop. Warm parchment palette, strict 0px radius, architectural hairline grids, and literary editorial typography.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-800/60 text-xs flex items-center justify-between">
-            <span class="text-slate-400 font-medium">Style: Quiet Luxury &amp; Restraint</span>
-            <span class="text-[#c79d72] font-bold group-hover:translate-x-1 transition flex items-center gap-1">
-              Preview Demo →
-            </span>
-          </div>
-        </a>
+        <div class="space-y-3">
+          <p class="text-[11px] font-mono-tech uppercase tracking-[0.2em] text-[#8A8F98]">Phase 02 · 48 Hours</p>
+          <h4 class="font-display text-lg font-bold text-white">Anti-AI-Slop Code Build</h4>
+          <p class="text-xs text-[#8A8F98] leading-relaxed font-light">
+            Zero generic gradients, no emojis, no fake press bars. Single-file standalone HTML/Tailwind architecture with custom 1.25px SVG vector marks and fluid clamp typography.
+          </p>
+        </div>
 
-        <!-- Demo Card 3: Blend Commerce (Seed.com Scientific Retention Archetype) -->
-        <a href="./builds/blend-demo/" class="group rounded-2xl border border-[#15241C]/60 bg-[#0e1713] p-6 flex flex-col justify-between hover:border-[#34D399] transition duration-300 shadow-lg">
-          <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-[#34D399]/15 text-[#34D399] border border-[#34D399]/30">Seed.com Bio-Retention</span>
-              <span class="text-[11px] font-mono text-slate-400">/blend-demo/</span>
-            </div>
-            <h3 class="text-xl font-bold text-white group-hover:text-[#34D399] transition">NOOTRA Bio-Flow™ System</h3>
-            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-              Scientific subscription &amp; refill system. Emerald glass welcome jar paired with compostable refill pouches, strain traceability assay, and 1-click SMS portal retention mechanics.
-            </p>
-          </div>
-          <div class="mt-6 pt-4 border-t border-slate-800/60 text-xs flex items-center justify-between">
-            <span class="text-slate-400 font-medium">Style: Scientific Subscription</span>
-            <span class="text-[#34D399] font-bold group-hover:translate-x-1 transition flex items-center gap-1">
-              Preview Demo →
-            </span>
-          </div>
-        </a>
+        <div class="space-y-3">
+          <p class="text-[11px] font-mono-tech uppercase tracking-[0.2em] text-[#8A8F98]">Phase 03 · 72 Hours</p>
+          <h4 class="font-display text-lg font-bold text-white">Loom Audit &amp; Deploy</h4>
+          <p class="text-xs text-[#8A8F98] leading-relaxed font-light">
+            Automated Git push to GitHub Pages edge CDN, followed by a crisp 60-second Loom audit walkthrough delivered directly to the agency founder or brand decision-maker.
+          </p>
+        </div>
 
       </div>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-800/80 py-8 bg-[#0b0c0e]">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-      <p>© 2026 Client Demos · Taste-First 72-Hour Conversion Sprints</p>
-      <p>Deployed live via GitHub Pages</p>
+  </section>
+
+  <!-- Studio Footer -->
+  <footer class="hairline-t py-12 bg-[#090A0C] text-xs font-mono-tech text-[#8A8F98]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2026 Client Demos · 15-Day Solo B2B Sprint · $950 USD Flat</p>
+      <div class="flex items-center gap-6">
+        <a href="https://github.com/feelharsh7/client-demos" target="_blank" class="hover:text-white transition">GitHub</a>
+        <a href="file:///C:/Users/AdminFIS/.gemini/antigravity/scratch/b2b-sprint/leads/agencies_batch_1.md" class="hover:text-white transition">Prospects (Local)</a>
+      </div>
     </div>
   </footer>
+
 </body>
 </html>

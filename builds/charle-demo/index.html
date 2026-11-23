@@ -3,30 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ATELIER VENDÔME · Botanical Resins &amp; Outerwear — Charle Agency Quiet-Luxury Showcase</title>
+  <title>ATELIER VENDÔME · Resina Solaire Extrait de Parfum</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --canvas: #FFFEF2;
-      --canvas-tint: #F6F5E8;
-      --stone: #EBEADE;
-      --ink: #252525;
+      --canvas-tint: #F7F6EC;
+      --stone: #EFECE3;
+      --ink: #1C1C1C;
+      --ink-light: #52504B;
       --umber: #8E633C;
-      --hairline: rgba(37, 37, 37, 0.12);
+      --hairline: rgba(28, 28, 28, 0.12);
     }
     * {
       border-radius: 0px !important;
     }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, sans-serif;
       background-color: var(--canvas);
       color: var(--ink);
     }
-    .font-serif-editorial {
+    .font-serif-luxury {
       font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .font-mono-luxury {
+      font-family: 'Space Mono', monospace;
     }
     .hairline-border {
       border: 1px solid var(--hairline);
@@ -40,119 +44,118 @@
     .hairline-r {
       border-right: 1px solid var(--hairline);
     }
+    .editorial-display {
+      font-size: clamp(44px, 5.8vw, 88px);
+      letter-spacing: -0.035em;
+      line-height: 1.04;
+    }
+    .luxury-btn {
+      transition: all 450ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
   </style>
 </head>
-<body class="selection:bg-[#252525] selection:text-[#FFFEF2] antialiased pb-24 md:pb-0">
+<body class="selection:bg-[#1C1C1C] selection:text-[#FFFEF2] antialiased pb-28 md:pb-0">
 
   <!-- Architectural Provenance Top Bar -->
-  <aside class="hairline-b bg-[#FFFEF2] text-[#6b6964] py-2.5 px-6 lg:px-12 text-xs flex flex-col sm:flex-row items-center justify-between tracking-[0.06em]">
-    <div class="flex items-center gap-3 text-[11px] uppercase">
-      <span>Mayfair Atelier · Edition 2026</span>
+  <aside class="hairline-b bg-[#FFFEF2] text-[#52504B] py-2.5 px-6 lg:px-12 text-xs flex flex-col sm:flex-row items-center justify-between font-mono-luxury">
+    <div class="flex items-center gap-3 text-[11px] uppercase tracking-[0.14em]">
+      <span>Atelier Mayfair · London N° 04</span>
       <span>·</span>
-      <span>Stockholm Design Archives</span>
+      <span>Edition Solstice 2026</span>
     </div>
-    <div class="text-[11px] tracking-[0.08em] text-[#8E633C] mt-1 sm:mt-0 uppercase">
-      Limited Botanical Extraction · 300 Flagship Bottles Allocated
+    <div class="text-[11px] tracking-[0.14em] text-[#8E633C] mt-1 sm:mt-0 uppercase">
+      Numbered Flacons · 300 Global Allocations
     </div>
   </aside>
 
-  <!-- Navigation -->
+  <!-- Editorial Navigation -->
   <header class="hairline-b bg-[#FFFEF2]/90 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
       <div class="flex items-center gap-8">
-        <a href="#" class="font-serif-editorial text-2xl sm:text-3xl font-light tracking-[0.08em] text-[#252525] uppercase">
+        <a href="#" class="font-serif-luxury text-2xl sm:text-3xl font-light tracking-[0.08em] text-[#1C1C1C] uppercase">
           Atelier <span class="italic font-normal">Vendôme</span>
         </a>
-        <span class="hidden lg:inline-block text-[10px] uppercase tracking-[0.18em] text-[#8E633C] border-l border-[rgba(37,37,37,0.15)] pl-6">
-          Charle Agency Quiet-Luxury Framework
+        <span class="hidden lg:inline-block text-[10px] font-mono-luxury uppercase tracking-[0.2em] text-[#8E633C] border-l border-[#1C1C1C]/15 pl-6">
+          Quiet Luxury · Shopify Plus Framework
         </span>
       </div>
 
-      <nav class="hidden md:flex items-center gap-8 text-xs tracking-[0.1em] text-[#555]">
-        <a href="#composition" class="hover:text-black transition">Composition</a>
-        <a href="#provenance" class="hover:text-black transition">Provenance</a>
-        <a href="#botanicals" class="hover:text-black transition">Botanicals</a>
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono-luxury tracking-[0.12em] text-[#52504B] uppercase">
+        <a href="#composition" class="hover:text-black transition">Olfactory Notes</a>
+        <a href="#provenance" class="hover:text-black transition">Botanical Harvest</a>
+        <a href="#atelier" class="hover:text-black transition">The Flacon</a>
       </nav>
 
       <div class="flex items-center gap-6">
-        <span class="text-xs text-[#252525] font-serif-editorial text-lg hidden sm:inline">N° 118 / 300</span>
-        <button onclick="scrollToAcquisition()" class="border border-[#252525] hover:bg-[#252525] hover:text-[#FFFEF2] text-[#252525] text-xs uppercase tracking-[0.14em] font-medium px-5 py-2.5 transition duration-300">
-          Acquire Extrait
+        <span class="text-xs font-serif-luxury text-lg text-[#1C1C1C] hidden sm:inline">Allocated: N° 084 / 300</span>
+        <button onclick="scrollToAcquisition()" class="luxury-btn border border-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-[#FFFEF2] text-[#1C1C1C] text-xs font-mono-luxury uppercase tracking-[0.14em] px-5 py-2.5">
+          Acquire Flacon
         </button>
       </div>
     </div>
   </header>
 
   <!-- Editorial Main Presentation -->
-  <main class="max-w-7xl mx-auto px-6 lg:px-12 pt-12 sm:pt-20 pb-28">
+  <main class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 sm:pt-24 pb-32">
     
-    <!-- Headline Section with Architectural Humanist Serifs -->
-    <div class="max-w-3xl mb-16">
-      <p class="text-[11px] uppercase tracking-[0.2em] text-[#8E633C] mb-3">Botanical Parfum &amp; Cold-Pressed Resin · Solstice Release</p>
-      <h1 class="font-serif-editorial text-4xl sm:text-6xl lg:text-7xl font-light tracking-tight text-[#111] leading-[1.05]">
+    <!-- Headline Section with Architectural Proportions -->
+    <div class="max-w-4xl mb-16">
+      <p class="text-[11px] font-mono-luxury uppercase tracking-[0.22em] text-[#8E633C] mb-4">
+        Botanical Extrait de Parfum · Pure Maceration
+      </p>
+      <h1 class="font-serif-luxury font-light text-[#1C1C1C] editorial-display">
         Resina Solaire <br>
-        <span class="italic font-normal text-[#5c5850]">Extrait de Parfum · 100 mL</span>
+        <span class="italic font-normal text-[#52504B]">Extrait de Parfum · 100 mL</span>
       </h1>
-      <p class="mt-6 text-sm sm:text-base text-[#555] font-light leading-relaxed max-w-xl">
-        Wild Somali frankincense resin macerated in cold-pressed Mediterranean bergamot and distilled labdanum. Formulated for ceremonial wear and profound sensory stillness.
+      <p class="mt-6 text-base sm:text-lg text-[#52504B] font-light leading-relaxed max-w-2xl">
+        Wild-harvested Somali frankincense tears macerated in early-harvest Mediterranean bergamot and distilled labdanum. Unfiltered plant essences formulated for sensory clarity and architectural stillness.
       </p>
     </div>
 
-    <!-- Product Grid Split (Toteme / Aesop Proportions) -->
+    <!-- Product Split-Screen Grid (Toteme / Aesop Proportions) -->
     <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       
-      <!-- Left Column: Architectural Gallery -->
+      <!-- Left Column: Editorial Photography Gallery -->
       <div class="lg:col-span-7 space-y-8">
         
-        <!-- Primary Artifact Visual -->
-        <div class="relative hairline-border bg-[#F6F5E8] p-12 sm:p-20 flex flex-col items-center justify-center min-h-[520px]">
-          <span class="absolute top-6 left-6 text-[10px] font-mono tracking-[0.2em] uppercase text-[#8E633C]">
-            Batch Reference · 2026.04
-          </span>
-          <span class="absolute top-6 right-6 text-[10px] font-mono tracking-[0.2em] uppercase text-[#6b6964]">
-            Pure Organic Alcohol Base
-          </span>
+        <!-- Primary Artifact Visual (High-Res Still Life) -->
+        <div class="relative hairline-border bg-[#F7F6EC] p-6 sm:p-10">
+          <div class="flex items-center justify-between text-xs font-mono-luxury uppercase tracking-widest text-[#52504B] mb-4">
+            <span>Archival Photograph</span>
+            <span class="text-[#8E633C]">Batch Ref: 2026.04</span>
+          </div>
 
-          <!-- Minimalist Apothecary Bottle Silhouette -->
-          <div class="relative w-48 sm:w-56 h-80 bg-[#1e1c1a] border border-[#3a3530] flex flex-col items-center justify-between p-6 text-[#FFFEF2] shadow-sm transform hover:scale-[1.02] transition duration-500">
-            <div class="w-12 h-6 bg-[#0a0a09] border-b border-[#3a3530] -mt-10"></div>
-            
-            <div class="w-full text-center space-y-1">
-              <p class="text-[9px] uppercase tracking-[0.25em] text-[#8E633C]">Atelier Vendôme</p>
-              <p class="font-serif-editorial text-2xl tracking-[0.05em] uppercase">RESINA</p>
-              <p class="text-[9px] tracking-[0.18em] opacity-60">SOLAIRE</p>
-            </div>
-
-            <div class="w-full border-t border-[#3a3530] pt-4 text-center space-y-1 text-[9px] font-mono text-[#a8a39a]">
-              <p>Somali Frankincense · Bergamot</p>
-              <p>Labdanum · Smoked Vetiver</p>
-              <p class="text-[#8E633C] pt-1">100 mL · 3.4 FL OZ</p>
+          <div class="relative overflow-hidden border border-[#1C1C1C]/15 bg-[#EAE7DC] aspect-[4/5] mb-6">
+            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=1200&q=80" alt="Minimalist amber luxury perfume flacon on natural stone" class="w-full h-full object-cover">
+            <div class="absolute bottom-4 left-4 right-4 bg-[#FFFEF2]/95 backdrop-blur-sm p-4 border border-[#1C1C1C]/15 flex items-center justify-between text-xs font-mono-luxury">
+              <span>Flacon N° 084 · Hand-Numbered</span>
+              <span class="text-[#8E633C]">Organic Grain Spirit</span>
             </div>
           </div>
 
-          <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between text-[11px] text-[#7a7770] font-mono tracking-[0.15em] uppercase">
-            <span>Hand-numbered Flacon</span>
-            <span>Unfiltered Plant Resins</span>
+          <div class="flex items-center justify-between text-[11px] font-mono-luxury tracking-[0.16em] uppercase text-[#52504B] pt-2">
+            <span>Natural 240h Maceration</span>
+            <span>Distilled in Mayfair, London</span>
           </div>
         </div>
 
-        <!-- Aesop-Inspired Sensorial Olfactory Profile Table -->
-        <div class="hairline-border bg-[#FFFEF2] divide-y divide-[rgba(37,37,37,0.12)] text-xs">
-          <div class="grid grid-cols-12 p-4 sm:p-5 items-center">
-            <span class="col-span-4 uppercase tracking-[0.14em] text-[#8E633C] font-medium text-[11px]">Aroma</span>
-            <span class="col-span-8 text-[#333] font-light">Resinous, citrus-balsamic, warm mineral smoke</span>
+        <!-- Aesop-Inspired Olfactory Profile Table -->
+        <div id="composition" class="hairline-border bg-[#FFFEF2] divide-y divide-[rgba(28,28,28,0.12)] text-xs font-mono-luxury">
+          <div class="p-4 bg-[#1C1C1C] text-[#FFFEF2] flex items-center justify-between uppercase tracking-wider text-[11px]">
+            <span>Sensory Composition &amp; Olfactory Architecture</span>
+            <span class="text-[#c79d72]">Formula RS-100</span>
           </div>
-          <div class="grid grid-cols-12 p-4 sm:p-5 items-center">
-            <span class="col-span-4 uppercase tracking-[0.14em] text-[#8E633C] font-medium text-[11px]">Top Notes</span>
-            <span class="col-span-8 text-[#333] font-light">Early-harvest Calabrian bergamot, pink peppercorn</span>
+          <div class="grid grid-cols-12 p-4 items-center">
+            <span class="col-span-4 uppercase tracking-wider text-[#8E633C] text-[11px]">Top Notes</span>
+            <span class="col-span-8 font-sans text-xs text-[#1C1C1C] font-light">Calabrian early-harvest bergamot, hand-crushed pink peppercorn</span>
           </div>
-          <div class="grid grid-cols-12 p-4 sm:p-5 items-center">
-            <span class="col-span-4 uppercase tracking-[0.14em] text-[#8E633C] font-medium text-[11px]">Heart Notes</span>
-            <span class="col-span-8 text-[#333] font-light">Somali wild frankincense tears, Spanish cistus labdanum</span>
+          <div class="grid grid-cols-12 p-4 items-center">
+            <span class="col-span-4 uppercase tracking-wider text-[#8E633C] text-[11px]">Heart Notes</span>
+            <span class="col-span-8 font-sans text-xs text-[#1C1C1C] font-light">Somali wild frankincense tears, Spanish cistus labdanum resin</span>
           </div>
-          <div class="grid grid-cols-12 p-4 sm:p-5 items-center">
-            <span class="col-span-4 uppercase tracking-[0.14em] text-[#8E633C] font-medium text-[11px]">Base Notes</span>
-            <span class="col-span-8 text-[#333] font-light">Haitian smoked vetiver root, Atlantic cedarwood</span>
+          <div class="grid grid-cols-12 p-4 items-center">
+            <span class="col-span-4 uppercase tracking-wider text-[#8E633C] text-[11px]">Base Notes</span>
+            <span class="col-span-8 font-sans text-xs text-[#1C1C1C] font-light">Smoked Haitian vetiver root, aged Atlantic cedarwood heartwood</span>
           </div>
         </div>
 
@@ -162,120 +165,110 @@
       <div id="acquisition-col" class="lg:col-span-5 hairline-border bg-[#FFFEF2] p-8 sm:p-10 space-y-8 sticky top-28">
         
         <div>
-          <div class="flex items-center justify-between text-[11px] uppercase tracking-[0.18em] text-[#8E633C] mb-2">
+          <div class="flex items-center justify-between text-[11px] font-mono-luxury uppercase tracking-[0.18em] text-[#8E633C] mb-2">
             <span>Edition · Allocation</span>
-            <span>Allocated: N° 118 / 300</span>
+            <span>Allocated: N° 084 / 300</span>
           </div>
-          <h2 class="font-serif-editorial text-3xl sm:text-4xl font-light text-[#111]">
+          <h2 class="font-serif-luxury text-3xl sm:text-4xl font-light text-[#1C1C1C]">
             Resina Solaire Extrait
           </h2>
-          <p class="text-xl font-light text-[#252525] mt-2 font-serif-editorial">
-            £195 <span class="text-xs font-sans tracking-widest text-[#7a7770]">GBP · Inclusive of VAT</span>
+          <p class="text-2xl font-light text-[#1C1C1C] mt-2 font-serif-luxury">
+            £195 <span class="text-xs font-mono-luxury tracking-widest text-[#52504B]">GBP · VAT Included</span>
           </p>
         </div>
 
-        <!-- Volume / Size Switcher -->
+        <!-- Flacon Volume Switcher -->
         <div class="space-y-3 pt-4 hairline-t">
-          <label class="block text-[11px] uppercase tracking-[0.18em] text-[#6b6964]">Flacon Volume:</label>
+          <label class="block text-[11px] font-mono-luxury uppercase tracking-[0.16em] text-[#52504B]">Flacon Capacity:</label>
           <div class="grid grid-cols-2 gap-3">
-            <button onclick="setVolume(this, 100, 195)" class="vol-btn p-3 border border-[#252525] bg-[#252525] text-[#FFFEF2] text-left transition">
-              <p class="text-xs font-medium uppercase tracking-wider">100 mL Flacon</p>
-              <p class="text-[10px] opacity-75">Flagship Atelier Vessel</p>
+            <button onclick="setFlacon(this, 100, 195)" class="flacon-btn p-3.5 border border-[#1C1C1C] bg-[#1C1C1C] text-[#FFFEF2] text-left luxury-btn">
+              <p class="text-xs font-mono-luxury uppercase tracking-wider">100 mL Flacon</p>
+              <p class="text-[10px] opacity-75 font-mono-luxury">Flagship Vessel</p>
             </button>
-            <button onclick="setVolume(this, 50, 125)" class="vol-btn p-3 border border-[#ddd9d0] hover:border-[#252525] text-left transition">
-              <p class="text-xs font-medium uppercase tracking-wider">50 mL Travel Vessel</p>
-              <p class="text-[10px] text-[#7a7770]">£125 GBP</p>
+            <button onclick="setFlacon(this, 50, 125)" class="flacon-btn p-3.5 border border-[#1C1C1C]/20 hover:border-[#1C1C1C] bg-white text-[#1C1C1C] text-left luxury-btn">
+              <p class="text-xs font-mono-luxury uppercase tracking-wider">50 mL Travel</p>
+              <p class="text-[10px] text-[#52504B] font-mono-luxury">£125 GBP</p>
             </button>
           </div>
         </div>
 
-        <!-- Packaging Choice (Eco Linen Box vs Wooden Atelier Casket) -->
+        <!-- Bespoke Monogramming Customizer -->
         <div class="space-y-3">
-          <label class="block text-[11px] uppercase tracking-[0.18em] text-[#6b6964]">Presentation Case:</label>
-          <div class="space-y-2 text-xs">
-            <label class="flex items-center justify-between p-3 hairline-border cursor-pointer hover:bg-[#F6F5E8] transition">
-              <span class="flex items-center gap-2">
-                <input type="radio" name="packaging" checked class="accent-[#252525]">
-                <span>Archival Alabaster Gift Box</span>
-              </span>
-              <span class="text-[11px] text-[#8E633C] uppercase tracking-wider">Included</span>
-            </label>
-            <label class="flex items-center justify-between p-3 hairline-border cursor-pointer hover:bg-[#F6F5E8] transition">
-              <span class="flex items-center gap-2">
-                <input type="radio" name="packaging" class="accent-[#252525]">
-                <span>Hand-Carved Smoked Oak Casket</span>
-              </span>
-              <span class="text-[11px] text-[#555] font-mono">+£45 GBP</span>
-            </label>
-          </div>
+          <label class="block text-[11px] font-mono-luxury uppercase tracking-[0.16em] text-[#52504B]">Complimentary Atelier Monogram:</label>
+          <input type="text" id="monogram-input" maxlength="4" placeholder="Initials (e.g., H.F.)" oninput="updateMonogram(this)" class="w-full bg-[#FAF8F5] hairline-border text-xs font-mono-luxury px-4 py-3 uppercase tracking-widest text-[#1C1C1C] focus:border-[#1C1C1C] focus:outline-none transition">
+          <p class="text-[10px] font-mono-luxury text-[#52504B]">Hand-etched onto the flacon collar in Mayfair before wax sealing.</p>
         </div>
 
         <!-- Primary Luxury CTA -->
         <div class="space-y-3 pt-2">
-          <button onclick="handleLuxuryAdd()" class="w-full bg-[#252525] hover:bg-[#111] text-[#FFFEF2] py-4 px-6 text-xs uppercase tracking-[0.2em] font-medium transition duration-300">
-            Add to Bag · <span id="btn-price-display">£195 GBP</span>
+          <button onclick="handleLuxuryAdd()" class="luxury-btn w-full bg-[#1C1C1C] hover:bg-black text-[#FFFEF2] py-4 px-6 text-xs font-mono-luxury uppercase tracking-[0.2em] font-medium transition duration-300">
+            Add to Bag · <span id="btn-flacon-price">£195 GBP</span>
           </button>
-          <button onclick="handleSampleRequest()" class="w-full hairline-border hover:border-[#252525] text-[#252525] py-3 px-6 text-[11px] uppercase tracking-[0.16em] transition">
+          <button onclick="handleDiscoveryVial()" class="luxury-btn w-full hairline-border hover:border-[#1C1C1C] text-[#1C1C1C] py-3 px-6 text-[11px] font-mono-luxury uppercase tracking-[0.16em] transition">
             Request 2mL Discovery Vial First
           </button>
         </div>
 
         <!-- Understated Reassurances -->
-        <div class="pt-4 hairline-t space-y-2 text-[11px] text-[#6b6964] leading-relaxed">
-          <p>· Complimentary tracked express courier on all UK &amp; European orders.</p>
-          <p>· Includes matching 2 mL sample vial for testing on skin prior to breaking the wax seal.</p>
-          <p>· 100% cruelty-free, organic grain spirit, distilled in small batches in Mayfair.</p>
+        <div class="pt-4 hairline-t space-y-2 text-[11px] font-mono-luxury text-[#52504B] leading-relaxed">
+          <p>· Insured white-glove courier across United Kingdom &amp; Europe.</p>
+          <p>· Includes 2 mL testing vial so seal can be preserved if exchanged.</p>
+          <p>· Formulated with organic grain neutral spirit and zero synthetics.</p>
         </div>
 
       </div>
     </div>
 
-    <!-- Aesop-Style Philosophical Quote Section -->
-    <section class="mt-28 py-16 hairline-t hairline-b">
+    <!-- Aesop-Inspired Philosophical Chapter -->
+    <section class="mt-36 py-20 hairline-t hairline-b">
       <div class="max-w-2xl mx-auto text-center space-y-4">
-        <p class="text-[11px] uppercase tracking-[0.22em] text-[#8E633C]">The Philosophy of Formulation</p>
-        <blockquote class="font-serif-editorial text-2xl sm:text-3xl font-light italic leading-relaxed text-[#252525]">
-          “We cultivate fragrance not as an ephemeral ornament, but as an architectural anchor for the morning consciousness.”
+        <p class="text-[11px] font-mono-luxury uppercase tracking-[0.22em] text-[#8E633C]">Atelier Manifesto</p>
+        <blockquote class="font-serif-luxury text-2xl sm:text-3xl font-light italic leading-relaxed text-[#1C1C1C]">
+          “Fragrance should not mask presence—it should act as an architectural anchor for the morning consciousness.”
         </blockquote>
-        <p class="text-xs uppercase tracking-[0.14em] text-[#7a7770]">— Atelier Director of Botanicals, London</p>
+        <p class="text-xs font-mono-luxury uppercase tracking-[0.14em] text-[#52504B]">— Founder &amp; Nose, London Atelier</p>
       </div>
     </section>
 
   </main>
 
-  <!-- Sticky Mobile Bar (0px Radius, Quiet-Luxury Style) -->
-  <aside class="md:hidden fixed bottom-0 left-0 right-0 bg-[#FFFEF2] hairline-t p-3 z-50 flex items-center justify-between">
+  <!-- Sticky Mobile Acquisition Bar -->
+  <aside class="md:hidden fixed bottom-0 left-0 right-0 bg-[#FFFEF2] hairline-t p-3.5 z-50 flex items-center justify-between">
     <div>
-      <div class="text-[10px] uppercase tracking-wider text-[#8E633C]">Resina Solaire</div>
-      <div class="text-sm font-serif-editorial text-[#111]" id="mob-price-luxury">£195 GBP</div>
+      <div class="text-[10px] font-mono-luxury uppercase tracking-wider text-[#8E633C]">Resina Solaire</div>
+      <div class="text-sm font-serif-luxury text-[#1C1C1C]" id="mobile-flacon-price">£195 GBP</div>
     </div>
-    <button onclick="handleLuxuryAdd()" class="bg-[#252525] text-[#FFFEF2] text-[11px] uppercase tracking-[0.16em] px-5 py-2.5 font-medium">
+    <button onclick="handleLuxuryAdd()" class="bg-[#1C1C1C] text-[#FFFEF2] text-[11px] font-mono-luxury uppercase tracking-[0.16em] px-5 py-2.5 font-medium">
       Add to Bag
     </button>
   </aside>
 
-  <!-- Minimalist Architectural Footer -->
-  <footer class="hairline-t py-12 bg-[#FFFEF2] text-center text-[11px] uppercase tracking-[0.2em] text-[#7a7770]">
-    <p>Atelier Vendôme London · Quiet-Luxury Showcase Engineered for <strong>Charle Agency Roster</strong></p>
+  <!-- Minimalist Footer -->
+  <footer class="hairline-t py-12 bg-[#FFFEF2] text-center text-[11px] font-mono-luxury uppercase tracking-[0.18em] text-[#52504B]">
+    <p>Atelier Vendôme London · Tailored for <strong>Charle Agency Shopify Plus Roster</strong></p>
   </footer>
 
   <script>
-    let selectedVolume = 100;
-    let selectedPrice = 195;
+    let currentVol = 100;
+    let currentPrice = 195;
+    let userInitials = "";
 
-    function setVolume(btn, vol, price) {
-      selectedVolume = vol;
-      selectedPrice = price;
-
-      document.querySelectorAll('.vol-btn').forEach(b => {
-        b.classList.remove('bg-[#252525]', 'text-[#FFFEF2]', 'border-[#252525]');
-        b.classList.add('border-[#ddd9d0]', 'text-[#252525]');
+    function setFlacon(btn, vol, price) {
+      currentVol = vol;
+      currentPrice = price;
+      document.querySelectorAll('.flacon-btn').forEach(b => {
+        b.classList.remove('bg-[#1C1C1C]', 'text-[#FFFEF2]', 'border-[#1C1C1C]');
+        b.classList.add('border-[#1C1C1C]/20', 'text-[#1C1C1C]', 'bg-white');
       });
-      btn.classList.remove('border-[#ddd9d0]', 'text-[#252525]');
-      btn.classList.add('bg-[#252525]', 'text-[#FFFEF2]', 'border-[#252525]');
+      btn.classList.remove('border-[#1C1C1C]/20', 'bg-white', 'text-[#1C1C1C]');
+      btn.classList.add('bg-[#1C1C1C]', 'text-[#FFFEF2]', 'border-[#1C1C1C]');
 
-      document.getElementById('btn-price-display').textContent = '£' + price + ' GBP';
-      document.getElementById('mob-price-luxury').textContent = '£' + price + ' GBP';
+      document.getElementById('btn-flacon-price').textContent = '£' + price + ' GBP';
+      document.getElementById('mobile-flacon-price').textContent = '£' + price + ' GBP';
+    }
+
+    function updateMonogram(input) {
+      userInitials = input.value.trim().toUpperCase();
     }
 
     function scrollToAcquisition() {
@@ -283,11 +276,12 @@
     }
 
     function handleLuxuryAdd() {
-      alert("✦ [Quiet-Luxury Drawer]\nAdded: Resina Solaire Extrait (" + selectedVolume + " mL Flacon)\nTotal: £" + selectedPrice + " GBP\n\nDirectly triggers the unhurried bespoke slide-out bag with complimentary 2mL discovery vial.");
+      const monoStr = userInitials ? (" (Monogram: " + userInitials + ")") : "";
+      alert("✦ [Atelier Bag Drawer]\nAllocating Piece N° 084 / 300\nSize: " + currentVol + " mL Flacon" + monoStr + "\nTotal: £" + currentPrice + " GBP\n\nRoutes directly to private white-glove dispatch.");
     }
 
-    function handleSampleRequest() {
-      alert("✉ [Discovery Vial]\nA 2mL discovery sample of Resina Solaire has been staged for delivery to your address.");
+    function handleDiscoveryVial() {
+      alert("✉ [Discovery Vial Enroute]\nA 2mL discovery vial of Resina Solaire has been scheduled for complimentary delivery.");
     }
   </script>
 </body>
