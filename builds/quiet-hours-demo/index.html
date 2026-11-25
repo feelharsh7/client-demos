@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIET HOURS — Dimensional D2C & Shopify OS 2.0 Build</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111111;
+      --bone: #F7F5F0;
+      --muted: #A39E95;
+      --accent: #D94E34;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.24);
+      --glass-hi: inset 0 1px 1px rgba(255, 255, 255, 0.45), inset 0 -1px 2px rgba(0, 0, 0, 0.35);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); color: var(--bone); }
+    body { margin: 0; font-family: "Space Grotesk", sans-serif; background: var(--bg); color: var(--bone); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; }
+
+    .mono { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .serif-it { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; }
+    .tabular { font-variant-numeric: tabular-nums; }
+    .container { width: 100%; max-width: 1380px; margin: 0 auto; padding-inline: 20px; }
+
+    .dim-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.78; }
+    .ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.4; animation: float 18s ease-in-out infinite alternate; }
+    .orb-1 { width: 520px; height: 520px; top: -120px; left: -100px; background: radial-gradient(circle, rgba(217,78,52,0.72), transparent 70%); }
+    .orb-2 { width: 600px; height: 600px; bottom: -160px; right: -120px; background: radial-gradient(circle, rgba(247,245,240,0.22), transparent 70%); animation-delay: -7s; }
+    @keyframes float { to { transform: translate(80px, 60px) scale(1.16); } }
+
+    .glass {
+      position: relative;
+      background: var(--glass-bg);
+      backdrop-filter: blur(26px) saturate(190%);
+      -webkit-backdrop-filter: blur(26px) saturate(190%);
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--glass-hi), 0 24px 60px rgba(0,0,0,0.45);
+    }
+
+    header.pill-nav {
+      position: fixed; top: 14px; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 24px); max-width: 1120px; z-index: 60; border-radius: 999px;
+      height: 52px; padding-inline: 20px;
+      display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+    }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: rgba(247,245,240,0.7); transition: color 150ms; }
+    .nav-links a:hover { color: var(--bone); }
+    .brand-mark { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.2em; justify-self: center; }
+    .nav-cta { justify-self: end; border: 1px solid var(--glass-border); border-radius: 999px; padding: 6px 14px; background: rgba(255,255,255,0.1); }
+
+    /* Act I: Quiet Room */
+    .room {
+      position: relative; min-height: 100svh; z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+      padding: 96px 20px 48px; overflow: hidden;
+      border-bottom: 1px solid rgba(247,245,240,0.12);
+    }
+    .room-bg { position: absolute; inset: 0; z-index: 0; }
+    .room-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.42) contrast(1.06); transition: filter 900ms, transform 1200ms; }
+    .room[data-quiet="true"] .room-bg img { filter: brightness(0.62) contrast(1.04); transform: scale(1.03); }
+
+    .ping {
+      position: absolute; z-index: 1; padding: 8px 14px; border-radius: 999px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(12px);
+      animation: drift 5s ease-in-out infinite alternate;
+      transition: opacity 650ms, transform 750ms cubic-bezier(0.16,1,0.3,1), filter 650ms;
+    }
+    .ping.accent { border-color: rgba(217,78,52,0.6); }
+    .room[data-quiet="true"] .ping { opacity: 0; transform: scale(0.75) translateY(24px); filter: blur(10px); }
+    @keyframes drift { to { transform: translateY(-10px); } }
+
+    .room-stage { position: relative; z-index: 2; max-width: 920px; width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
+    .room-title { margin: 0; font-size: clamp(2.85rem, 10vw, 6.25rem); line-height: 0.9; letter-spacing: -0.04em; font-weight: 700; }
+    .room-title .serif-it { font-size: 1.14em; }
+
+    .gyro { position: relative; width: 230px; height: 230px; display: flex; align-items: center; justify-content: center; }
+    .orbit { position: absolute; inset: 0; border-radius: 50%; border: 1px solid rgba(247,245,240,0.2); animation: spin 22s linear infinite; pointer-events: none; }
+    .orbit::before { content: ""; position: absolute; top: -4px; left: 50%; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-left: -3.5px; }
+    .orbit-2 { inset: 20px; border-style: dashed; border-color: rgba(247,245,240,0.28); animation-direction: reverse; animation-duration: 15s; }
+    .orbit-3 { inset: 40px; border-color: rgba(217,78,52,0.45); animation-duration: 9s; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .dial {
+      position: relative; width: 124px; height: 124px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #2C2A28, #0B0B0B 74%);
+      border: 1px solid rgba(247,245,240,0.34);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.75), inset 0 2px 4px rgba(255,255,255,0.28);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: transform 300ms ease;
+    }
+    .dial:hover { transform: scale(1.05); }
+    .dial-ind {
+      position: absolute; top: 14px; left: 50%; width: 4px; height: 18px; margin-left: -2px; border-radius: 2px;
+      background: var(--accent); transform-origin: 2px 48px; transform: rotate(-42deg);
+      transition: transform 500ms cubic-bezier(0.16,1,0.3,1), background 300ms;
+    }
+    .room[data-quiet="true"] .dial-ind { transform: rotate(42deg); background: var(--bone); }
+    .status-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; }
+    .led { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .room[data-quiet="true"] .led { background: #5A5854; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px; border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.35); background: var(--bone); color: #111;
+      cursor: pointer; transition: transform 220ms, background 200ms, color 200ms;
+    }
+    .btn:hover { transform: translateY(-2px); background: var(--accent); color: var(--bone); border-color: var(--accent); }
+    .btn-ghost { background: rgba(255,255,255,0.08); color: var(--bone); }
+
+    /* Act II: Spatial Table */
+    section { position: relative; z-index: 1; padding-block: 72px; border-bottom: 1px solid rgba(247,245,240,0.12); }
+    .sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; padding-bottom: 20px; margin-bottom: 40px; border-bottom: 1px solid rgba(247,245,240,0.12); }
+    .sec-title { margin: 0; font-size: clamp(1.8rem, 4.5vw, 3.25rem); line-height: 0.94; letter-spacing: -0.03em; }
+
+    .table-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px 24px; }
+    .artifact {
+      clip-path: polygon(0 18px, 18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%);
+      padding: 14px; display: flex; flex-direction: column; gap: 12px; transition: transform 350ms cubic-bezier(0.16,1,0.3,1);
+    }
+    .artifact-media { position: relative; aspect-ratio: 4/5; overflow: hidden; border-radius: 10px; background: #181716; }
+    .artifact-media img { width: 100%; height: 100%; object-fit: cover; transition: opacity 280ms, transform 450ms; }
+    .artifact-media img.alt { position: absolute; inset: 0; opacity: 0; }
+    .artifact:hover .artifact-media img.alt { opacity: 1; }
+    .sizes { display: flex; flex-wrap: wrap; gap: 6px; }
+    .chip { background: rgba(255,255,255,0.06); border: 1px solid rgba(247,245,240,0.18); border-radius: 999px; padding: 6px 10px; cursor: pointer; }
+    .chip:hover, .chip[aria-pressed="true"] { background: var(--bone); color: #111; }
+
+    /* Act III: Optical Loupe */
+    .loupe-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+    .spec-list { display: flex; flex-direction: column; gap: 10px; }
+    .spec-btn { display: flex; align-items: center; gap: 16px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(247,245,240,0.14); padding: 14px 18px; text-align: left; cursor: pointer; transition: background 200ms, transform 200ms; }
+    .spec-btn[aria-selected="true"], .spec-btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); transform: translateX(6px); }
+    .loupe-stage { position: relative; border-radius: 26px; aspect-ratio: 4/5; overflow: hidden; cursor: crosshair; touch-action: none; display: flex; align-items: center; justify-content: center; background: #181716; }
+    .loupe-stage img { width: 100%; height: 100%; object-fit: contain; padding: 24px; pointer-events: none; }
+    .loupe-stage.spectral img, .loupe-stage.spectral .loupe-lens { filter: invert(1) hue-rotate(180deg) contrast(1.15); }
+    .loupe-lens { position: absolute; width: 180px; height: 180px; border-radius: 50%; border: 1px solid var(--accent); box-shadow: 0 18px 40px rgba(0,0,0,0.65); background-repeat: no-repeat; pointer-events: none; opacity: 0; transform: translate(-50%,-50%) scale(0.85); transition: opacity 180ms, transform 180ms; }
+    .loupe-stage:hover .loupe-lens { opacity: 1; transform: translate(-50%,-50%) scale(1); }
+
+    @media (min-width: 768px) {
+      .loupe-grid { grid-template-columns: 1fr 1fr; }
+      .artifact:nth-child(2), .artifact:nth-child(5) { margin-top: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="dimCanvas" class="dim-canvas" aria-hidden="true"></canvas>
+  <div class="ambient" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+
+  <header class="pill-nav glass">
+    <nav class="nav-links mono">
+      <a href="../../">← Portfolio</a>
+      <a href="#exhibition">Exhibition</a>
+      <a href="#loupe-lab">Loupe</a>
+    </nav>
+    <span class="brand-mark">QUIET HOURS</span>
+    <a href="https://8pj0mk-dq.myshopify.com/" target="_blank" rel="noopener" class="nav-cta mono">Live Shopify ↗</a>
+  </header>
+
+  <!-- Act I -->
+  <div class="room" id="room" data-quiet="false">
+    <div class="room-bg"><img src="./assets/hero-campaign.jpg" alt="Quiet Hours Editorial Still Life"></div>
+    <span class="ping mono accent" style="top:18%;left:8%">14 UNREAD</span>
+    <span class="ping mono" style="top:24%;right:10%;animation-delay:-1.2s">REPLY NOW?</span>
+    <span class="ping mono" style="bottom:28%;left:11%;animation-delay:-2.4s">MEETING IN 5M</span>
+    <span class="ping mono accent" style="bottom:22%;right:9%;animation-delay:-3.1s">URGENT PING</span>
+
+    <div class="room-stage">
+      <div class="mono" style="color:var(--accent)">CASE STUDY 04 // SHOPIFY OS 2.0 + PRINTIFY</div>
+      <h1 class="room-title"><span class="serif-it">Silence</span><br>IS AN ARTIFACT.</h1>
+
+      <div class="gyro">
+        <span class="orbit"></span><span class="orbit orbit-2"></span><span class="orbit orbit-3"></span>
+        <button type="button" class="dial" id="dialBtn" aria-pressed="false">
+          <span class="dial-ind"></span>
+          <span class="mono" id="dialLabel">MUTE</span>
+        </button>
+      </div>
+
+      <div class="status-pill glass">
+        <span class="led"></span>
+        <span class="mono" id="statusText">FREQ: 64.0 HZ · TURN TO SILENCE</span>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a href="#exhibition" class="btn mono">ENTER EXHIBITION →</a>
+        <a href="https://8pj0mk-dq.myshopify.com/" target="_blank" rel="noopener" class="btn btn-ghost mono">OPEN LIVE STORE ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Act II -->
+  <section id="exhibition">
+    <div class="container">
+      <div class="sec-head">
+        <div>
+          <div class="mono" style="color:var(--accent);margin-bottom:8px">ACT II // STUDIO TABLE</div>
+          <h2 class="sec-title">SIX PRINTIFY-BACKED ARTIFACTS.</h2>
+        </div>
+        <span class="mono" style="color:var(--muted)">BACK-PRINT FIRST · SIZE-ONLY CHIPS</span>
+      </div>
+
+      <div class="table-grid" id="productGrid"></div>
+    </div>
+  </section>
+
+  <!-- Act III -->
+  <section id="loupe-lab">
+    <div class="container loupe-grid">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div>
+          <div class="mono" style="color:var(--accent);margin-bottom:8px">ACT III // 2.2X OPTICAL LOUPE</div>
+          <h2 class="sec-title" style="margin-bottom:12px">INSPECT THE 300 DPI INK.</h2>
+          <p style="margin:0;color:var(--muted)">Hover or drag across the canvas to inspect copperplate engravings, coarse halftone dots, and isometric line schematics.</p>
+        </div>
+
+        <div class="spec-list" id="specList"></div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(247,245,240,0.12)">
+          <span class="mono" id="specMeta" style="color:var(--muted)">480 GSM · CARBON BLACK · COPPERPLATE DTG</span>
+          <button type="button" id="spectralBtn" class="chip mono" aria-pressed="false">SPECTRAL X-RAY</button>
+        </div>
+      </div>
+
+      <div class="loupe-stage glass" id="loupeStage">
+        <img id="loupeImg" src="./assets/artifact-01.jpg" alt="300 DPI Print Specimen">
+        <div class="loupe-lens" id="loupeLens"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const PRODUCTS = [
+      { id: "01", title: "Late Checkout Heavyweight Hoodie", price: "$118.00", lane: "HOSPITALITY", spec: "480 GSM · CARBON BLACK · COPPERPLATE DTG", sizes: ["S","M","L","XL"], mock: "./assets/mockup-01.jpg", art: "./assets/artifact-01.jpg", bg: "#181716" },
+      { id: "02", title: "Out of Office Broadsheet Hoodie", price: "$118.00", lane: "RISOGRAPH", spec: "480 GSM · WARM BONE · HALFTONE DTG", sizes: ["S","M","L","XL"], mock: "./assets/mockup-02.jpg", art: "./assets/artifact-02.jpg", bg: "#F7F5F0" },
+      { id: "03", title: "Zero Notifications Attenuator Tee", price: "$58.00", lane: "HARDWARE", spec: "280 GSM · CARBON BLACK · ISOMETRIC DTG", sizes: ["S","M","L","XL"], mock: "./assets/mockup-03.jpg", art: "./assets/artifact-03.jpg", bg: "#181716" },
+      { id: "04", title: "Slow Morning Protocol Tee", price: "$58.00", lane: "CITY-BOY", spec: "280 GSM · IVORY · LINE-ART DTG", sizes: ["S","M","L","XL"], mock: "./assets/mockup-04.jpg", art: "./assets/artifact-04.jpg", bg: "#F7F5F0" },
+      { id: "05", title: "Hibernation Standard Issue Throw", price: "$94.00", lane: "WINTER SALON", spec: "420 GSM · SHERPA-VELVETEEN · 50\" × 60\"", sizes: ["50\" × 60\""], mock: "./assets/mockup-05.jpg", art: "./assets/artifact-05.jpg", bg: "#181716" },
+      { id: "06", title: "Single-Tasking Surface Desk Mat", price: "$48.00", lane: "WORKSPACE", spec: "4MM NEOPRENE · VELVETEEN · 16\" × 32\"", sizes: ["16\" × 32\""], mock: "./assets/mockup-06.jpg", art: "./assets/artifact-06.jpg", bg: "#F7F5F0" }
+    ];
+
+    const grid = document.getElementById("productGrid");
+    grid.innerHTML = PRODUCTS.map((p) => `
+      <article class="artifact glass">
+        <div class="mono tabular" style="display:flex;justify-content:space-between;color:var(--muted);font-size:0.65rem">
+          <span>OBJ. ${p.id}</span><span>${p.lane}</span>
+        </div>
+        <div class="artifact-media">
+          <img src="${p.mock}" alt="${p.title}" loading="lazy">
+          <img src="${p.art}" alt="${p.title} 300 DPI print" class="alt" loading="lazy">
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px">
+          <strong style="font-size:0.94rem">${p.title}</strong>
+          <span class="mono tabular" style="color:var(--muted)">${p.price}</span>
+        </div>
+        <div class="sizes">${p.sizes.map(s => `<span class="chip mono">${s}</span>`).join("")}</div>
+      </article>
+    `).join("");
+
+    const specList = document.getElementById("specList");
+    specList.innerHTML = PRODUCTS.map((p, i) => `
+      <button type="button" class="spec-btn" aria-selected="${i===0}" data-idx="${i}">
+        <span class="mono tabular" style="color:var(--accent)">${p.id}</span>
+        <span>${p.title}</span>
+        <span class="mono" style="color:var(--muted);margin-left:auto">${p.lane}</span>
+      </button>
+    `).join("");
+
+    /* 60fps Gravitational Lattice */
+    const canvas = document.getElementById("dimCanvas");
+    const ctx = canvas.getContext("2d");
+    let w = 0, h = 0, pts = [], isQuiet = false;
+    const mouse = { x: -9999, y: -9999 };
+    const resize = () => {
+      w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; pts = [];
+      const gap = w < 768 ? 58 : 72;
+      for (let y = gap/2; y < h; y += gap) for (let x = gap/2; x < w; x += gap) pts.push({ ox:x, oy:y, x, y });
+    };
+    resize();
+    window.addEventListener("resize", resize, { passive: true });
+    window.addEventListener("pointermove", e => { mouse.x = e.clientX; mouse.y = e.clientY; }, { passive: true });
+    (function tick(t) {
+      ctx.clearRect(0, 0, w, h);
+      const amp = isQuiet ? 0.35 : 1.0;
+      for (const p of pts) {
+        const dx = mouse.x - p.ox, dy = mouse.y - p.oy, dist = Math.hypot(dx, dy);
+        const pull = dist < 210 ? (1 - dist/210) * 28 : 0;
+        const tx = p.ox - (dist > 0 ? (dx/dist)*pull : 0);
+        const ty = p.oy - (dist > 0 ? (dy/dist)*pull : 0) + Math.sin(p.ox*0.012 + t*0.0014)*5*amp;
+        p.x += (tx - p.x)*0.12; p.y += (ty - p.y)*0.12;
+        if (pull > 4) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.strokeStyle = `rgba(217,78,52,${(pull/28)*0.28})`; ctx.lineWidth = 0.8; ctx.stroke(); }
+        ctx.fillStyle = pull > 8 ? "rgba(217,78,52,0.85)" : "rgba(247,245,240,0.24)";
+        ctx.fillRect(p.x-1, p.y-1, 2, 2);
+      }
+      requestAnimationFrame(tick);
+    })(0);
+
+    /* Mechanical Rotary Dial */
+    const room = document.getElementById("room"), dialBtn = document.getElementById("dialBtn");
+    dialBtn.addEventListener("click", () => {
+      try {
+        const Ctx = window.AudioContext || window.webkitAudioContext;
+        if (Ctx) {
+          const ac = new Ctx(), osc = ac.createOscillator(), g = ac.createGain();
+          osc.type = "triangle"; osc.frequency.setValueAtTime(160, ac.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(48, ac.currentTime + 0.025);
+          g.gain.setValueAtTime(0.18, ac.currentTime); g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.028);
+          osc.connect(g); g.connect(ac.destination); osc.start(); osc.stop(ac.currentTime + 0.03);
+        }
+      } catch (_) {}
+      isQuiet = !isQuiet;
+      room.dataset.quiet = String(isQuiet);
+      dialBtn.setAttribute("aria-pressed", String(isQuiet));
+      document.getElementById("dialLabel").textContent = isQuiet ? "QUIET" : "MUTE";
+      document.getElementById("statusText").textContent = isQuiet ? "FREQ: 0.00 HZ · ZERO-NOISE RESONANCE" : "FREQ: 64.0 HZ · TURN TO SILENCE";
+    });
+
+    /* 3D Tilt */
+    document.querySelectorAll(".artifact").forEach(card => {
+      card.addEventListener("pointermove", e => {
+        const r = card.getBoundingClientRect();
+        card.style.transform = `perspective(900px) rotateX(${((e.clientY-r.top)/r.height-0.5)*-8}deg) rotateY(${((e.clientX-r.left)/r.width-0.5)*8}deg) translateY(-4px)`;
+      });
+      card.addEventListener("pointerleave", () => { card.style.transform = ""; });
+    });
+
+    /* 2.2x Loupe */
+    const stage = document.getElementById("loupeStage"), img = document.getElementById("loupeImg"), lens = document.getElementById("loupeLens");
+    const syncLoupe = () => { lens.style.backgroundImage = `url("${img.src}")`; };
+    syncLoupe();
+    stage.addEventListener("pointermove", e => {
+      const r = stage.getBoundingClientRect();
+      lens.style.left = (e.clientX - r.left) + "px"; lens.style.top = (e.clientY - r.top) + "px";
+      lens.style.backgroundSize = `${r.width*2.2}px ${r.height*2.2}px`;
+      lens.style.backgroundPosition = `${((e.clientX-r.left)/r.width)*100}% ${((e.clientY-r.top)/r.height)*100}%`;
+    });
+    specList.addEventListener("click", e => {
+      const btn = e.target.closest("[data-idx]"); if (!btn) return;
+      specList.querySelectorAll(".spec-btn").forEach(b => b.setAttribute("aria-selected", "false"));
+      btn.setAttribute("aria-selected", "true");
+      const p = PRODUCTS[Number(btn.dataset.idx)];
+      img.src = p.art; stage.style.background = p.bg; syncLoupe();
+      document.getElementById("specMeta").textContent = p.spec;
+    });
+    document.getElementById("spectralBtn").addEventListener("click", e => {
+      const on = stage.classList.toggle("spectral");
+      e.currentTarget.setAttribute("aria-pressed", String(on));
+    });
+  </script>
+</body>
+</html>
